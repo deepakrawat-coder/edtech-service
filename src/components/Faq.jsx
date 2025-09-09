@@ -3,31 +3,31 @@ export default function Faq() {
     const faqData = [
         {
             id: "One",
-            question: "Q. CRM software, and how can it benefit my business?",
+            question: "Q1. CRM software, and how can it benefit my business?",
             answer:
                 "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
         },
         {
             id: "Two",
-            question: "Q. How do I get started with CRM software?",
+            question: "Q2. How do I get started with CRM software?",
             answer:
                 "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
         },
         {
             id: "Three",
-            question: "Q. Can I customize CRM software my business needs?",
+            question: "Q3. Can I customize CRM software my business needs?",
             answer:
                 "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
         },
         {
             id: "Four",
-            question: "Q. Is CRM software scalable for businesses of all sizes?",
+            question: "Q4. Is CRM software scalable for businesses of all sizes?",
             answer:
                 "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
         },
         {
             id: "Five",
-            question: "Q. How secure is my data in CRM software?",
+            question: "Q5. How secure is my data in CRM software?",
             answer:
                 "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
         },

@@ -124,7 +124,7 @@ export default function Pricing() {
                                                     </li>
                                                 ))}
                                             </ul>
-                                            <Link to="pricing.html" className="theme-btn">
+                                            <Link to="#" className="theme-btn">
                                                 Pick your plan <i className="fa-sharp fa-regular fa-arrow-right"></i>
                                             </Link>
                                         </div>

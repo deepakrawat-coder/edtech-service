@@ -9,7 +9,7 @@ export default function Services() {
             title: "Contact management",
             description:
                 "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
-            link: "service-details.html",
+            link: "#",
             delay: ".3s",
         },
         {
@@ -18,7 +18,7 @@ export default function Services() {
             title: "Sales automation",
             description:
                 "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
-            link: "service-details.html",
+            link: "#",
             delay: ".5s",
         },
         {
@@ -27,7 +27,7 @@ export default function Services() {
             title: "Task Management",
             description:
                 "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
-            link: "service-details.html",
+            link: "#",
             delay: ".7s",
         },
         {
@@ -36,7 +36,7 @@ export default function Services() {
             title: "Pipelines management",
             description:
                 "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
-            link: "service-details.html",
+            link: "#",
             delay: ".3s",
         },
         {
@@ -45,7 +45,7 @@ export default function Services() {
             title: "Email automation",
             description:
                 "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
-            link: "service-details.html",
+            link: "#",
             delay: ".5s",
         },
         {
@@ -54,7 +54,7 @@ export default function Services() {
             title: "Workflow Automation",
             description:
                 "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
-            link: "service-details.html",
+            link: "#",
             delay: ".7s",
         },
     ];

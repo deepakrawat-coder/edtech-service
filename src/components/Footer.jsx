@@ -10,9 +10,9 @@ export default function Footer() {
             <h2 className="title-anim">Try It Free Explore for 7 Days</h2>
             <p>Start building your dream CRM pipeline today</p>
             <div className="project-button mt-40">
-              <Link to="pricing.html" className="theme-btn">Start free trial <i
+              <Link to="#" className="theme-btn">Start free trial <i
                 className="fa-sharp fa-regular fa-arrow-right"></i></Link>
-              <Link to="contact.html" className="theme-btn style-2">Get a demo <i
+              <Link to="#" className="theme-btn style-2">Get a demo <i
                 className="fa-sharp fa-regular fa-arrow-right"></i></Link>
             </div>
           </div>
@@ -23,7 +23,7 @@ export default function Footer() {
               <div className="col-xl-5 col-lg-4 col-md-6">
                 <div className="single-footer-widget">
                   <div className="widget-head">
-                    <Link to="index.html">
+                    <Link to="/">
                       <img src="/assets/img/logo/logo.png" alt="img" loading='lazy' />
                     </Link>
                   </div>
@@ -46,22 +46,22 @@ export default function Footer() {
                   </div>
                   <ul className="list-area">
                     <li>
-                      <Link to="contact.html">
+                      <Link to="#">
                         Admission Management System <span className='text-primary fw-bold'>(AMS)</span>
                       </Link>
                     </li>
                     <li>
-                      <Link to="pricing.html">
+                      <Link to="#">
                         Learning Management System <span className='text-primary fw-bold'>(LMS)</span>
                       </Link>
                     </li>
                     <li>
-                      <Link to="project-details.html">
+                      <Link to="#">
                         Online Examination Portal
                       </Link>
                     </li>
                     <li>
-                      <Link to="contact.html">
+                      <Link to="#">
                         Customer Relationship Management <span className='text-primary fw-bold'>(CRM)</span>
                       </Link>
                     </li>
@@ -75,18 +75,18 @@ export default function Footer() {
                   </div>
                   <ul className="list-area">
                     <li>
-                      <Link to="about.html">
+                      <Link to="#">
                         About Us
                       </Link>
                     </li>
                     <li>
-                      <Link to="team.html">
+                      <Link to="#">
                         Pricing
                       </Link>
                     </li>
                     <li>
-                      <Link to="terms.html">
-                       Blogs
+                      <Link to="#">
+                        Blogs
                       </Link>
                     </li>
                     <li>
@@ -105,22 +105,20 @@ export default function Footer() {
               <div className="icon">
                 <i className="fa-sharp fa-solid fa-phone-volume"></i>
               </div>
-              <h5><Link to="tel:01233337689">0123-333-7689</Link></h5>
+              <h5><Link to="tel:+91 8851920153"> +91 8851920153 </Link></h5>
             </div>
             <div className="icon-items">
               <div className="icon">
                 <i className="fa-solid fa-envelope"></i>
               </div>
-              <h5><Link to="/cdn-cgi/l/email-protection#3b52555d547b5e435a564b575e15585456"><span className="__cf_email__" data-cfemail="fc95929a93bc99849d918c9099d29f9391">[email&#160;protected]</span></Link></h5>
+              <h5><Link to="mailto: "><span className="__cf_email__" data-cfemail="fc95929a93bc99849d918c9099d29f9391">[email&#160;protected]</span></Link></h5>
             </div>
             <div className="icon-items">
               <div className="icon">
                 <i className="fa-sharp fa-solid fa-location-dot"></i>
               </div>
               <h5>
-                <Link
-                  to="#">House
-                  5919 Trussville, USA.</Link>
+                <Link to="#"> A-18, S1, Second Floor, Sector 59, Noida UP 201301 </Link>
               </h5>
             </div>
           </div>

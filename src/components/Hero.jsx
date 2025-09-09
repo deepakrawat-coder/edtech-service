@@ -34,7 +34,7 @@ export default function Hero() {
                             </li>
                         </ul>
                         <div className="hero-button">
-                            <Link to="pricing.html" className="theme-btn wow fadeInUp" data-wow-delay=".3s">Start free trial <i
+                            <Link to="#" className="theme-btn wow fadeInUp" data-wow-delay=".3s">Start free trial <i
                                 className="fa-sharp fa-regular fa-arrow-right"></i></Link>
                             <Link to="#" className="theme-btn style-2 video-popup wow fadeInUp" data-wow-delay=".5s">
                                 Watch demo <i className="fa-regular fa-circle-play"></i>
@@ -43,7 +43,7 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className="dashboard-section section-padding pb-0">
-                    <div className="dashboard-image img-custom-anim-left ">
+                    <div className="dashboard-image">
                         <img src="/assets/img/dashboard-img.png" alt="img" className='img-fluid' loading='lazy' />
                             {/* <Link to="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" className="video-btn ripple video-popup">
                                 <i className="fas fa-play"></i>

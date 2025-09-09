@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Features() {
     return (
@@ -28,12 +28,12 @@ export default function Features() {
                                 {/* <Link to="project-details.html" className="link-btn wow fadeInUp" data-wow-delay=".5s">Learn more<i
                                     className="fa-sharp fa-regular fa-arrow-right"></i></Link> */}
                             </div>
-                            <div className="project-thumb img-custom-anim-right">
+                            <div className="project-thumb">
                                 <img src="/assets/img/project/01.png" alt="img" loading='lazy' />
                             </div>
                         </div>
                         <div className="project-wrapper style-padding style-2">
-                            <div className="project-thumb img-custom-anim-left">
+                            <div className="project-thumb">
                                 <img src="/assets/img/project/02.png" alt="img" loading='lazy' />
                             </div>
                             <div className="project-content">
@@ -58,12 +58,12 @@ export default function Features() {
                                 {/* <Link to="project-details.html" className="link-btn wow fadeInUp" data-wow-delay=".3s">Learn more<i
                                     className="fa-sharp fa-regular fa-arrow-right"></i></Link> */}
                             </div>
-                            <div className="project-thumb img-custom-anim-right">
+                            <div className="project-thumb">
                                 <img src="/assets/img/project/03.png" alt="img" loading='lazy' />
                             </div>
                         </div>
                         <div className="project-wrapper style-padding style-4">
-                            <div className="project-thumb img-custom-anim-left">
+                            <div className="project-thumb">
                                 <img src="/assets/img/project/04.png" alt="img" loading='lazy' />
                             </div>
                             <div className="project-content">
@@ -79,9 +79,9 @@ export default function Features() {
                             </div>
                         </div>
                         <div className="project-button wow fadeInUp" data-wow-delay=".3s">
-                            <Link to="project-details.html" className="theme-btn">More Features <i
+                            <Link to="#" className="theme-btn">More Features <i
                                 className="fa-sharp fa-regular fa-arrow-right"></i></Link>
-                            <Link to="pricing.html" className="theme-btn style-2">Start free trial <i
+                            <Link to="#" className="theme-btn style-2">Start free trial <i
                                 className="fa-sharp fa-regular fa-arrow-right"></i></Link>
                         </div>
                     </div>
