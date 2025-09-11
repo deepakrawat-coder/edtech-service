@@ -10,22 +10,41 @@ import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { isLMSProduct } from "../helper";
+// import { isLMSProduct } from "../helper";
 
 export default function Home() {
   const [clients, setClients] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
+  const [plains, setPlains] = useState([]);
+  //   useEffect(() => {
+  //     axios.get("http://edtech-web.local/admin/app/service/api/lmsApi"),
+  //       {
+  //         headers: {
+  //           pid: 1,
+  //         },
+  //       }.then((res) => {
+  //         if (res.data.status === 200) {
+  //           setClients(res.data.data);
+  //         }
+  //       });
+  //   }, []);
   useEffect(() => {
     axios
-      .get("http://edtech-web.local/admin/app/service/api/lmsApi")
+      .get("http://edtech-web.local/admin/app/service/api/lmsApi", {
+        headers: {
+          "X-Pid": "3",
+        },
+      })
       .then((res) => {
+        console.log(res.data);
         if (res.data.status === 200) {
-          // filter clients using helper
-          const filteredClients = res.data.data.filter(
-            (item) => isLMSProduct(item) === 1
-          );
-
-          setClients(filteredClients);
+          setClients(res.data.data.clientLogos);
+          setTestimonials(res.data.data.testimonialsData);
+          setPlains(res.data.data.plainsData);
         }
+      })
+      .catch((err) => {
+        console.error("API Error:", err);
       });
   }, []);
 
@@ -36,8 +55,8 @@ export default function Home() {
       <Services />
       <Features />
       <Connect />
-      <Testimonials />
-      <Pricing />
+      <Testimonials testimonialsData={testimonials} />
+      <Pricing pricing={plains} />
       <Marquee />
       <Faq />
       <BlogSection />

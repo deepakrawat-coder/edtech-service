@@ -1,32 +1,7 @@
 import { useEffect, useRef } from "react";
 
-export default function Testimonials() {
+export default function Testimonials({ testimonialsData }) {
     const sliderRef = useRef(null);
-
-    // ✅ JSON Data for testimonials
-    const testimonials = [
-        {
-            id: 1,
-            text: "We've been using CRM management for months now, and the results speak for themselves. Our sales pipeline visibility has improved.",
-            img: "/assets/img/brand/ccvte.jpg",
-            name: "CCVTE",
-            position: "Board",
-        },
-        {
-            id: 2,
-            text: "CRM has been a game changer for us! Everything is centralized and much easier to manage.",
-            img: "/assets/img/brand/glocal.jpg",
-            name: "Glocal University",
-            position: "University",
-        },
-        {
-            id: 3,
-            text: "The automation features save us hours every week. Our workflows are much smoother now.",
-            img: "/assets/img/brand/jua-logo.jpg",
-            name: "Jamia",
-            position: "Board",
-        },
-    ];
 
     useEffect(() => {
         if (window.Swiper && sliderRef.current) {
@@ -69,23 +44,22 @@ export default function Testimonials() {
                     </p>
                 </div>
 
-                {/* ✅ Swiper */}
                 <div className="swiper testimonial-slider" ref={sliderRef}>
                     <div className="swiper-wrapper">
-                        {testimonials.map((t) => (
+                        {testimonialsData.map((t) => (
                             <div className="swiper-slide" key={t.id}>
                                 <div className="testimonial-box-items">
-                                    <p>{t.text}</p>
+                                    <p dangerouslySetInnerHTML={{ __html: t.message }}></p>
                                     <div className="icon">
                                         <img src="/assets/img/testimonial/quote.png" alt="quote" loading='lazy' />
                                     </div>
                                     <div className="client-info-item">
                                         <div className="client-image">
-                                            <img src={t.img} alt={t.name} loading='lazy' />
+                                            <img src={t.image} alt={t.name} loading='lazy' />
                                         </div>
                                         <div className="content">
                                             <h3>{t.name}</h3>
-                                            <p>{t.position}</p>
+                                            <p>{t.title}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -93,7 +67,6 @@ export default function Testimonials() {
                         ))}
                     </div>
 
-                    {/* Navigation */}
                     <div className="array-button justify-content-center pt-5">
                         <button className="array-prev">
                             <i className="fa-solid fa-chevron-left"></i>

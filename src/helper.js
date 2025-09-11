@@ -1,3 +1,3 @@
-export const isLMSProduct = (client) => {
-  return client.productsName === "LMS" ? 1 : 0;
-};
+// export const isLMSProduct = (client) => {
+//   return client.productsName === "LMS" ? 1 : 0;
+// };

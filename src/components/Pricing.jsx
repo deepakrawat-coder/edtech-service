@@ -1,140 +1,108 @@
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-export default function Pricing() {
+export default function Pricing({ pricing = [] }) {
+  console.log("Pricing prop:", pricing);
 
-    // src/data/pricingData.js
-    const pricingData = [
-        {
-            id: 1,
-            title: "Basic Plan",
-            price: "$35",
-            discount: "$5.99",
-            billing: "Billed Yearly",
-            style: "", // no special style
-            tag: null,
-            features: [
-                { text: "Live chat widget for website", included: true },
-                { text: "All basic CRM features", included: true },
-                { text: "Up to 8,000 contacts", included: true },
-                { text: "Additional staff accounts", included: true },
-                { text: "Avalara tax automation", included: false },
-                { text: "Organizational admin", included: false },
-                { text: "24/7 email and chat support", included: true },
-            ],
-        },
-        {
-            id: 2,
-            title: "Standard Plan",
-            price: "$78",
-            discount: "$8.00",
-            billing: "Billed Yearly",
-            style: "style-2",
-            tag: "/assets/img/tag.png",
-            features: [
-                { text: "Live chat widget for website", included: true },
-                { text: "All basic CRM features", included: true },
-                { text: "Up to 8,000 contacts", included: true },
-                { text: "Additional staff accounts", included: true },
-                { text: "24/7 email and chat support", included: true },
-                { text: "Custom reports and analytics", included: true },
-                { text: "Custom reports and analytics", included: true },
-            ],
-        },
-        {
-            id: 3,
-            title: "Professional Plan",
-            price: "$99",
-            discount: "$5.99",
-            billing: "Billed Yearly",
-            style: "style-3",
-            tag: null,
-            features: [
-                { text: "Live chat widget for website", included: true },
-                { text: "All basic CRM features", included: true },
-                { text: "Up to 8,000 contacts", included: true },
-                { text: "Additional staff accounts", included: true },
-                { text: "Avalara tax automation", included: false },
-                { text: "Organizational admin", included: false },
-                { text: "24/7 email and chat support", included: true },
-            ],
-        },
-    ];
+  // rotate styles across cards
+  const styles = ["","style-2", "style-3", ];
 
+  return (
+    <section
+      className="pricing-section section-padding fix"
+      style={{ backgroundImage: "url('/assets/img/pricing-bg.png')" }}
+    >
+      <div className="container">
+        <div className="section-title text-center mb-80">
+          <div className="sub-text justify-content-center wow fadeInUp">
+            <img src="/assets/img/star.png" alt="img" loading="lazy" />
+            <h6>PRICING PLAN</h6>
+            <img src="/assets/img/star.png" alt="img" loading="lazy" />
+          </div>
+          <h2 className="title-anim">Starter Plan For Everyone</h2>
+          <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
+            Choose from our tiered options, each tailored to match your specific
+            needs and budget.
+            <br /> Enjoy transparent pricing with no hidden fees.
+          </p>
+        </div>
 
-    return (
-        <section
-            className="pricing-section section-padding fix"
-            style={{ backgroundImage: "url('/assets/img/pricing-bg.png')" }}
-        >
-            <div className="container">
-                <div className="section-title text-center mb-80">
-                    <div className="sub-text justify-content-center wow fadeInUp">
-                        <img src="/assets/img/star.png" alt="img" loading='lazy' />
-                        <h6>PRICING PLAN</h6>
-                        <img src="/assets/img/star.png" alt="img" loading='lazy' />
-                    </div>
-                    <h2 className="title-anim">Starter Plan For Everyone</h2>
-                    <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
-                        Choose from our tiered options, each tailored to match your specific needs and budget.
-                        <br /> Enjoy transparent pricing with no hidden fees.
-                    </p>
-                </div>
+        <div className="tab-content">
+          <div id="Yearly" className="tab-pane fade show active" role="tabpanel">
+            <div className="row">
+              {pricing.length > 0 ? (
+                pricing.map((plan, index) => {
+                  let features = [];
+                  try {
+                    features = plan.features ? JSON.parse(plan.features) : [];
+                  } catch (e) {
+                    console.error("Invalid features JSON:", plan.features);
+                  }
 
-                <div className="tab-content">
-                    <div id="Yearly" className="tab-pane fade show active" role="tabpanel">
-                        <div className="row">
-                            {pricingData.map((plan, index) => (
-                                <div
-                                    className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                                    data-wow-delay={`${0.3 + index * 0.2}s`}
-                                    key={plan.id}
-                                >
-                                    <div className={`pricing-card-item ${plan.style}`}>
-                                        {plan.tag && (
-                                            <div className="tag">
-                                                <img src={plan.tag} alt="tag" loading='lazy' />
-                                            </div>
-                                        )}
-                                        <div className="pricing-header">
-                                            <div className="pricing-shape">
-                                                <img src="/assets/img/pricing-shape.png" alt="shape" loading='lazy' />
-                                            </div>
-                                            <h3>{plan.title}</h3>
-                                            <div className="pricing-text">
-                                                <h2>{plan.price}</h2>
-                                                <div className="price">
-                                                    <span>
-                                                        <del>{plan.discount}</del> Off
-                                                    </span>
-                                                    <p>{plan.billing}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="pricing-list">
-                                            <h4>Key features:</h4>
-                                            <ul>
-                                                {plan.features.map((feature, i) => (
-                                                    <li key={i}>
-                                                        {feature.included ? (
-                                                            <i className="fa-solid fa-check"></i>
-                                                        ) : (
-                                                            <i className="fa-sharp fa-regular fa-xmark color-1"></i>
-                                                        )}
-                                                        {feature.text}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                            <Link to="#" className="theme-btn">
-                                                Pick your plan <i className="fa-sharp fa-regular fa-arrow-right"></i>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+                  return (
+                    <div
+                      className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+                      data-wow-delay={`${0.3 + index * 0.2}s`}
+                      key={plan.plain_id}
+                    >
+                      <div
+                        className={`pricing-card-item ${
+                          styles[index % styles.length]
+                        }`}
+                      >
+                        {plan.tag && (
+                          <div className="tag">
+                            <img src={plan.tag} alt="tag" loading="lazy" />
+                          </div>
+                        )}
+                        <div className="pricing-header">
+                          <div className="pricing-shape">
+                            <img
+                              src="/assets/img/pricing-shape.png"
+                              alt="shape"
+                              loading="lazy"
+                            />
+                          </div>
+                          <h3>{plan.category_name}</h3>
+                          <div className="pricing-text">
+                            <h2>${plan.discout_price}</h2>
+                            <div className="price">
+                              <span>
+                                <del>${plan.actual_price}</del> Off
+                              </span>
+                              <p>Billed Yearly</p>
+                            </div>
+                          </div>
                         </div>
+                        <div className="pricing-list">
+                          <h4>Key features:</h4>
+                          <ul>
+                            {features.map((f, i) => (
+                              <li key={i}>
+                                {f.status === "1" ? (
+                                  <i className="fa-solid fa-check"></i>
+                                ) : (
+                                  <i className="fa-sharp fa-regular fa-xmark color-1"></i>
+                                )}
+                                {f.feature}
+                              </li>
+                            ))}
+                          </ul>
+                          <Link to="#" className="theme-btn">
+                            Pick your plan{" "}
+                            <i className="fa-sharp fa-regular fa-arrow-right"></i>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                </div>
+                  );
+                })
+              ) : (
+                <p className="text-center">No plans available</p>
+              )}
             </div>
-        </section>
-    );
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
