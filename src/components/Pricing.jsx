@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Pricing({ pricing = [] }) {
-  console.log("Pricing prop:", pricing);
+export default function Pricing({ pricing = [] }) { 
 
   // rotate styles across cards
   const styles = ["","style-2", "style-3", ];

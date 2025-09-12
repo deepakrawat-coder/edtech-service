@@ -1,37 +1,38 @@
-export default function Faq() {
+export default function Faq({faqs}) {
+    console.log(faqs);
     // JSON data for FAQ
-    const faqData = [
-        {
-            id: "One",
-            question: "Q1. CRM software, and how can it benefit my business?",
-            answer:
-                "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
-        },
-        {
-            id: "Two",
-            question: "Q2. How do I get started with CRM software?",
-            answer:
-                "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
-        },
-        {
-            id: "Three",
-            question: "Q3. Can I customize CRM software my business needs?",
-            answer:
-                "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
-        },
-        {
-            id: "Four",
-            question: "Q4. Is CRM software scalable for businesses of all sizes?",
-            answer:
-                "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
-        },
-        {
-            id: "Five",
-            question: "Q5. How secure is my data in CRM software?",
-            answer:
-                "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
-        },
-    ];
+    // const faqData = [
+    //     {
+    //         id: "One",
+    //         question: "Q1. CRM software, and how can it benefit my business?",
+    //         answer:
+    //             "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
+    //     },
+    //     {
+    //         id: "Two",
+    //         question: "Q2. How do I get started with CRM software?",
+    //         answer:
+    //             "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
+    //     },
+    //     {
+    //         id: "Three",
+    //         question: "Q3. Can I customize CRM software my business needs?",
+    //         answer:
+    //             "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
+    //     },
+    //     {
+    //         id: "Four",
+    //         question: "Q4. Is CRM software scalable for businesses of all sizes?",
+    //         answer:
+    //             "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
+    //     },
+    //     {
+    //         id: "Five",
+    //         question: "Q5. How secure is my data in CRM software?",
+    //         answer:
+    //             "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
+    //     },
+    // ];
 
     return (
         <section className="faq-section fix">
@@ -59,7 +60,7 @@ export default function Faq() {
                         <div className="col-xl-8">
                             <div className="faq-items">
                                 <div className="accordion" id="accordionExample">
-                                    {faqData.map((faq, index) => (
+                                    {faqs.map((faq, index) => (
                                         <div className="accordion-item" key={faq.id}>
                                             <h2 className="accordion-header" id={`heading${faq.id}`}>
                                                 <button
@@ -70,7 +71,7 @@ export default function Faq() {
                                                     aria-expanded={index === 0 ? "true" : "false"}
                                                     aria-controls={`collapse${faq.id}`}
                                                 >
-                                                    {faq.question}
+                                                    {faq.questions}
                                                 </button>
                                             </h2>
                                             <div
@@ -80,7 +81,7 @@ export default function Faq() {
                                                 data-bs-parent="#accordionExample"
                                             >
                                                 <div className="accordion-body">
-                                                    <p>{faq.answer}</p>
+                                                    <p dangerouslySetInnerHTML={{ __html: faq.answers }}></p>
                                                 </div>
                                             </div>
                                         </div>
