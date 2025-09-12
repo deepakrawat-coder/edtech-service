@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-export default function BlogSection() {
-    // JSON Data for Blogs
-    const blogData = [
+export default function Blogs () {
+
+     const blogData = [
         {
             id: 1,
             image: "/assets/img/news/01.jpg",
@@ -24,9 +24,31 @@ export default function BlogSection() {
             link: "#",
             title: "Empowering Startups & Small Businesses",
         },
+        {
+            id: 4,
+            image: "/assets/img/news/01.jpg",
+            date: "07 May,2024",
+            link: "#",
+            title: "How to Comprehensive at SaaS Developments",
+        },
+        {
+            id: 5,
+            image: "/assets/img/news/02.jpg",
+            date: "07 May,2024",
+            link: "#",
+            title: "6 Essential Tips for Big Commerce Stores",
+        },
+        {
+            id: 6,
+            image: "/assets/img/news/03.jpg",
+            date: "07 May,2024",
+            link: "#",
+            title: "Empowering Startups & Small Businesses",
+        },
     ];
 
-    return (
+  return (
+    <>
         <section className="news-section section-padding fix">
             <div className="container">
                 <div className="section-title text-center mb-40">
@@ -34,11 +56,7 @@ export default function BlogSection() {
                         <img src="/assets/img/star.png" alt="img" loading='lazy' />
                         <h6>Blog & Article</h6> <img src="/assets/img/star.png" alt="img" loading='lazy' />
                     </div>
-                    <h2 className="title-anim">Our latest articles</h2>
-                    <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
-                        Welcome to our FAQS section, where we address common queries and provide helpful <br /> solutions to
-                        ensure you get the most out of our CRM software.
-                    </p>
+                    <h2 className="title-anim"> Our latest articles </h2>
                 </div>
 
                 <div className="row">
@@ -71,14 +89,8 @@ export default function BlogSection() {
                         </div>
                     ))}
                 </div>
-
-                <div className="service-button text-center mb-1 wow fadeInUp mt-4 mt-md-5" data-wow-delay=".3s">
-                    <Link to="/blogs" className="theme-btn">
-                        See All Blogs{" "}
-                        <i className="fa-sharp fa-regular fa-arrow-right"></i>
-                    </Link>
-                </div>
             </div>
         </section>
-    );
+    </>
+  )
 }

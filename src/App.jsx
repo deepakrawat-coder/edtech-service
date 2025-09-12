@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import TermsConditions from "./pages/TermsConditions";
+import Blogs from "./pages/Blogs";
+import BlogDetails from "./pages/BlogDetails";
 
 export default function App() {
   return (
@@ -12,6 +15,9 @@ export default function App() {
       <Route path="/" element={<RootLayout />}>
         {/* child routes inside RootLayout */}
         <Route index element={<Home />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blog-details/:slug" element={<BlogDetails />} />
 
         
         {/* <Route path="about" element={<About />} /> */}

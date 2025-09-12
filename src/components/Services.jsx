@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Services() {
     // JSON-like data array
@@ -85,7 +85,7 @@ export default function Services() {
                     {servicesData.map((service) => (
                         <div
                             key={service.id}
-                            className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+                            className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp position-relative"
                             data-wow-delay={service.delay}
                         >
                             <div className="service-box-items">
@@ -102,7 +102,7 @@ export default function Services() {
 
                                 {/* Icon */}
                                 <div className="icon">
-                                    <img src={service.icon} alt={service.title} loading='lazy'/>
+                                    <img src={service.icon} alt={service.title} width="100" loading='lazy' />
                                 </div>
 
                                 {/* Content */}
@@ -127,7 +127,7 @@ export default function Services() {
                     className="service-button text-center mb-1 wow fadeInUp"
                     data-wow-delay=".3s"
                 >
-                    <Link to="service.html" className="theme-btn">
+                    <Link to="#" className="theme-btn">
                         See All Services{" "}
                         <i className="fa-sharp fa-regular fa-arrow-right"></i>
                     </Link>
