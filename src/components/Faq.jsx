@@ -1,5 +1,5 @@
 export default function Faq({faqs}) {
-    console.log(faqs);
+    // console.log(faqs);
     // JSON data for FAQ
     // const faqData = [
     //     {

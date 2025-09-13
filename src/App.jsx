@@ -17,7 +17,7 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blog-details/:slug" element={<BlogDetails />} />
+        <Route path="/blog/:slug" element={<BlogDetails />} />
 
         
         {/* <Route path="about" element={<About />} /> */}

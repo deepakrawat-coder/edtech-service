@@ -16,7 +16,8 @@ export default function Home() {
   const [clients, setClients] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
   const [plains, setPlains] = useState([]);
-  const [faqs, setFaqs]= useState([]);
+  const [faqs, setFaqs] = useState([]);
+  const [blogs, setBlogs] = useState([]);
   //   useEffect(() => {
   //     axios.get("http://edtech-web.local/admin/app/service/api/lmsApi"),
   //       {
@@ -43,6 +44,7 @@ export default function Home() {
           setTestimonials(res.data.data.testimonialsData);
           setPlains(res.data.data.plainsData);
           setFaqs(res.data.data.faqData);
+          setBlogs(res.data.data.blogData)
         }
       })
       .catch((err) => {
@@ -61,7 +63,7 @@ export default function Home() {
       <Pricing pricing={plains} />
       <Marquee />
       <Faq faqs={faqs} />
-      <BlogSection />
+      <BlogSection blogData={blogs} />
     </>
   );
 }
