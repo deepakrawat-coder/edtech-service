@@ -6,54 +6,54 @@ export default function Services() {
         {
             id: 1,
             icon: "/assets/img/icon/01.svg",
-            title: "Contact management",
+            title: "Key to control",
             description:
-                "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
+                "Customer Relationship Management CRM is the key to governing consumer connection by offering a control. This is done through a transparent central data system, streamlining communication.",
             link: "#",
             delay: ".3s",
         },
         {
             id: 2,
             icon: "/assets/img/icon/02.svg",
-            title: "Sales automation",
+            title: "Data Collection",
             description:
-                "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
+                "CRM systems collect data by capturing every interaction between a company and it’s consumers via emails, purchases, feedback, preferences with history. This data is stored in a centralized.",
             link: "#",
             delay: ".5s",
         },
         {
             id: 3,
             icon: "/assets/img/icon/03.svg",
-            title: "Task Management",
+            title: "CRM the Joystick",
             description:
-                "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
+                "CRM is the joystick/language for modern engagement. Move left right up down and you get your desired customer activities, marketing, support, precision and assured results.",
             link: "#",
             delay: ".7s",
         },
         {
             id: 4,
             icon: "/assets/img/icon/04.svg",
-            title: "Pipelines management",
+            title: "Track Customers",
             description:
-                "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
+                "CRM tracks consumer needs and demand by capturing every interaction such as purchases, feedback, preferences by organising them into its clear transparent framework.",
             link: "#",
             delay: ".3s",
         },
         {
             id: 5,
             icon: "/assets/img/icon/05.svg",
-            title: "Email automation",
+            title: "CRM’s Promise",
             description:
-                "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
+                "CRM promises a longer, happier and a healthier relationship between companies and their customers by nurturing trust, simplifying interactions and with crystal clear responses.",
             link: "#",
             delay: ".5s",
         },
         {
             id: 6,
             icon: "/assets/img/icon/06.svg",
-            title: "Workflow Automation",
+            title: "Grading your workforce",
             description:
-                "This title is versatile and can adapted to fit the specific tone and branding of your website quality.",
+                "One of the best tools of CRM includes the grading of the company’s workforce. The real time evaluation done by CRM is a cutting edge algorithm with the highest precision.",
             link: "#",
             delay: ".7s",
         },
