@@ -10,6 +10,7 @@ import Blogs from "./pages/Blogs";
 import BlogDetails from "./pages/BlogDetails";
 import BuyNow from "./pages/BuyNow";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Success from "./pages/Success";
 
 export default function App() {
   return (
@@ -18,7 +19,8 @@ export default function App() {
         {/* child routes inside RootLayout */}
         <Route index element={<Home />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
-        <Route path="privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/success" element={<Success />} />
         <Route path="/buy-now" element={<BuyNow />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog-details/:slug" element={<BlogDetails />} />
