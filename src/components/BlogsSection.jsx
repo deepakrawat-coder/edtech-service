@@ -45,7 +45,7 @@ export default function BlogSection({ blogData }) {
 
         <div className="row">
           {blogData.map((blog) => (
-            <div className="col-xl-4 col-lg-6 col-md-6" key={blog.id}>
+            <div  className="col-xl-4 col-lg-6 col-md-6" key={blog.id}>
               <div className="news-box-items img-custom-anim-top">
                 <Link to={`/blog/${blog.Slug}`}>
                   <div className="news-thumb">
