@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-export default function PrivacyPolicy () {
+export default function PrivacyPolicy() {
     return (
         <>
             {/* Breadcrumb Section starts */}
-            <div className="breadcrumb-wrapper bg-cover" style={{backgroundImage: "url('assets/img/breadcrumb.jpg')"}} >
+            <div className="breadcrumb-wrapper bg-cover" style={{ backgroundImage: "url('assets/img/breadcrumb.jpg')" }} >
                 <div className="container">
                     <div className="page-heading">
                         <div className="page-heading-text">
@@ -40,7 +40,7 @@ export default function PrivacyPolicy () {
             {/* Breadcrumb Section ends */}
 
 
-             {/* Terms Start  */}
+            {/* Terms Start  */}
             <section className="terms-section fix section-padding">
                 <div className="container">
                     <div className="terms-wrapper">
@@ -48,58 +48,54 @@ export default function PrivacyPolicy () {
                             <div className="col-xl-12">
                                 <div className="terms-single-content">
                                     <div className="terms-header">
-                                        <h2> Privacy Policy </h2>
-                                        <h5> Last updated December 15, 2023 </h5>
+                                        <h2 className="fs-1 mb-0"> Privacy Policy </h2>
                                     </div>
-                                    <h5>
-                                        A CRM management terms page should clearly outline the terms and conditions related to
-                                        the use of the CRM software or services. This page is crucial for setting expectations
-                                        and legal boundaries between the service provider and the users. Here’s a detailed list
-                                        of what it should contain. A CRM management terms page should clearly outline the terms
-                                        and conditions related to the use of the CRM software or services. This page is crucial
-                                        for setting expectations and legal boundaries between the service provider and the
-                                        users. Here’s a detailed list of what it should contain.
-                                    </h5>
-                                    <div className="terms-area">
-                                        <div className="terms-items">
-                                            <div className="number">1</div>
-                                            <h4>
-                                                <b>User Responsibilities: </b> Clearly state your pricing structure, payment
-                                                terms, and any additional charges. Specify when and how invoices will be issued,
-                                                as well as your accepted payment methods.
-                                            </h4>
+                                    <p className="mb-5">
+                                        This website is operated by the EDTECH Innovate and its affiliates . This Privacy Policy governs how we collect, use, disclose, and store information collected through our website.
+                                    </p>
+
+                                    <div className="wrapper_terms-conditions">
+                                        <div className="tc mb-4">
+                                            <h4 className="mb-1">1. Collection Of Personal Data:</h4>
+                                            <p>
+                                                We collect personal data that you provide to us voluntarily when you create an account and interact with our website, including contact information and other information such as your name and e-mail address. We may also collect usage data, including your IP address, browser type and language, access times, and the pages you view while using our website.
+                                            </p>
                                         </div>
-                                        <div className="terms-items">
-                                            <div className="number">2</div>
-                                            <h4>
-                                                <b>Account Registration and Security:</b> Information on account creation,
-                                                maintenance, and security.User responsibility for maintaining the
-                                                confidentiality of login credentials.
-                                            </h4>
+
+                                        <div className="tc mb-4">
+                                            <h4 className="mb-1">2. Use Of Personal Data:</h4>
+                                            <p>
+                                                The personal data we collect is used to provide and improve our services, respond to customer service inquiries, process orders, send communications related to our services, detect and prevent fraud, comply with applicable laws and regulations, as well as for other legitimate business purposes.
+                                            </p>
                                         </div>
-                                        <div className="terms-items">
-                                            <div className="number">3</div>
-                                            <h4>
-                                                <b>Service Access and Usage:</b> Details on how users can access and use the CRM
-                                                services. Availability and limitations of the service (e.g., uptime commitments,
-                                                maintenance schedules).
-                                            </h4>
+
+                                        <div className="tc mb-4">
+                                            <h4 className="mb-1">3. Disclosure Of Personal Data:</h4>
+                                            <p>
+                                                We do not sell or rent personal data to third parties for their marketing purposes without your express consent. We may share your data with third parties in certain limited circumstances, including when required by law or if the disclosure is necessary for safety and security purposes. We may also share your data with other third parties with your consent.
+                                            </p>
                                         </div>
-                                        <div className="terms-items">
-                                            <div className="number">4</div>
-                                            <h4>
-                                                <b>Data Privacy and Security:</b> Policies regarding data collection, usage, and
-                                                storage.Security measures in place to protect user data.User rights and
-                                                responsibilities concerning data privacy.
-                                            </h4>
+
+                                        <div className="tc mb-4">
+                                            <h4 className="mb-1">4. Data Security:</h4>
+                                            <p>
+                                                We take reasonable precautions to protect the personal data we collect from loss, misuse, unauthorized access, disclosure, alteration, and destruction. We also employ reasonable security measures to protect against unauthorized access to personal data stored in our systems.
+                                            </p>
                                         </div>
-                                        <div className="terms-items pb-3">
-                                            <div className="number">5</div>
-                                            <h4>
-                                                <b>Fees and Payment Terms:</b> Information on pricing, payment methods, and
-                                                billing cycles. Refund and cancellation policies. Consequences of late or
-                                                non-payment.
-                                            </h4>
+
+                                        <div className="tc mb-4">
+                                            <h4 className="mb-1">5. Changes To This Policy:</h4>
+                                            <p>
+                                                This Privacy Policy is subject to change. We will post changes to this policy on our website. If we make any material changes to this Policy, we will notify you by email or by posting a notice on our website before the change becomes effective.
+                                            </p>
+                                        </div>
+
+                                        <div className="tc mb-4">
+                                            <h4 className="mb-1">6. Privacy Concerns:</h4>
+                                            <p>
+                                                If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us at{" "}
+                                                <a href="mailto:info@edtechinnovate.com">info@edtechinnovate.com</a>.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
