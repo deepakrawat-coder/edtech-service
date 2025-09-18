@@ -1,10 +1,7 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
-
-export default function Pricing({ pricing = [] }) { 
-
-  // rotate styles across cards
-  const styles = ["","style-2", "style-3", ];
-
+export default function Pricing({ pricing = [] }) {
+  const styles = ["", "style-2", "style-3"];
   return (
     <section
       className="pricing-section section-padding fix"
@@ -26,7 +23,11 @@ export default function Pricing({ pricing = [] }) {
         </div>
 
         <div className="tab-content">
-          <div id="Yearly" className="tab-pane fade show active" role="tabpanel">
+          <div
+            id="Yearly"
+            className="tab-pane fade show active"
+            role="tabpanel"
+          >
             <div className="row">
               {pricing.length > 0 ? (
                 pricing.map((plan, index) => {
@@ -77,7 +78,7 @@ export default function Pricing({ pricing = [] }) {
                           <ul>
                             {features.map((f, i) => (
                               <li key={i}>
-                                {f.status === "1" ? (
+                                {f.status === 1 ? (
                                   <i className="fa-solid fa-check"></i>
                                 ) : (
                                   <i className="fa-sharp fa-regular fa-xmark color-1"></i>
@@ -86,7 +87,8 @@ export default function Pricing({ pricing = [] }) {
                               </li>
                             ))}
                           </ul>
-                          <Link to="#" className="theme-btn">
+                          
+                          <Link to={`/pay/${plan.plain_id}`} className="theme-btn">
                             Pick your plan{" "}
                             <i className="fa-sharp fa-regular fa-arrow-right"></i>
                           </Link>

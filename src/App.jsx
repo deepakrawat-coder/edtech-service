@@ -11,6 +11,7 @@ import BlogDetails from "./pages/BlogDetails";
 import BuyNow from "./pages/BuyNow";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Success from "./pages/Success";
+import Fail from "./pages/Fail";
 
 export default function App() {
   return (
@@ -21,14 +22,14 @@ export default function App() {
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/fail" element={<Fail />} />
         <Route path="/buy-now" element={<BuyNow />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:slug" element={<BlogDetails />} />
+        <Route path="/pay/:planId" element={<BuyNow/>} />
 
-        
         {/* <Route path="about" element={<About />} /> */}
         {/* <Route path="contact" element={<Contact />} /> */}
-
 
         {/* catch all unmatched routes */}
         <Route path="*" element={<NotFound />} />
