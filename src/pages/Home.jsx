@@ -10,9 +10,9 @@ import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import { useData } from "../context/DataContext";
 // import { isLMSProduct } from "../helper";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { isLMSProduct } from "../helper";
+// import { useEffect, useState } from "react";
+// import axios from "axios";
+// import { isLMSProduct } from "../helper";
 import AboutUsSection from "../components/AboutUsSection";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
   // const [testimonials, setTestimonials] = useState([]);
   // const [plains, setPlains] = useState([]);
   // const [faqs, setFaqs] = useState([]);
-  // const [blogs, setBlogs] = useState([]); 
+  // const [blogs, setBlogs] = useState([]);
   // useEffect(() => {
   //   axios
   //     .get("http://edtech-web.local/admin/app/service/api/lmsApi", {
@@ -42,14 +42,25 @@ export default function Home() {
   //       console.error("API Error:", err);
   //     });
   // }, []);
- const { clients, testimonials, plains, faqs, blogs } = useData();
+  const {
+    clients,
+    testimonials,
+    plains,
+    faqs,
+    blogs,
+    banner,
+    services,
+    keyFeatures,
+    about,
+  } = useData();
+
   return (
     <>
-      <Hero />
-      <AboutUsSection />
+      <Hero banner={banner} />
+      <AboutUsSection about={about} />
       <Brands clients={clients} />
-      <Services />
-      <Features />
+      <Services services={services} />
+      <Features keyFeatures={keyFeatures} />
       <Connect />
       <Testimonials testimonialsData={testimonials} />
       <Pricing pricing={plains} />
@@ -59,4 +70,3 @@ export default function Home() {
     </>
   );
 }
-

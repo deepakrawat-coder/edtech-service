@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export default function Services() {
+export default function Services({services}) {
     // JSON-like data array
     const servicesData = [
         {
@@ -82,11 +82,11 @@ export default function Services() {
 
                 {/* Services grid */}
                 <div className="row" id='service'>
-                    {servicesData.map((service) => (
+                    {services.map((service) => (
                         <div
                             key={service.id}
                             className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp position-relative"
-                            data-wow-delay={service.delay}
+                            // data-wow-delay={service.delay}
                         >
                             <div className="service-box-items">
                                 {/* Shapes */}
@@ -102,15 +102,15 @@ export default function Services() {
 
                                 {/* Icon */}
                                 <div className="icon">
-                                    <img src={service.icon} alt={service.title} width="100" loading='lazy' />
+                                    <img src={service.image} alt={service.title} width="100" loading='lazy' />
                                 </div>
 
                                 {/* Content */}
                                 <div className="content">
                                     <h3>
-                                        <Link to={service.link}>{service.title}</Link>
+                                        <Link >{service.title}</Link>
                                     </h3>
-                                    <p>{service.description}</p>
+                                    <p>{service.message}</p>
                                 </div>
 
                                 {/* Arrow */}
