@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 // src/components/Footer.jsx
 export default function Footer() {
@@ -10,31 +10,51 @@ export default function Footer() {
             <h2 className="title-anim">Try It Free Explore for 7 Days</h2>
             <p>Start building your dream CRM pipeline today</p>
             <div className="project-button mt-40">
-              <Link to="#" className="theme-btn">Start free trial <i
-                className="fa-sharp fa-regular fa-arrow-right"></i></Link>
-              <Link to="#" className="theme-btn style-2">Get a demo <i
-                className="fa-sharp fa-regular fa-arrow-right"></i></Link>
+              <Link to="#" className="theme-btn">
+                Start free trial{" "}
+                <i className="fa-sharp fa-regular fa-arrow-right"></i>
+              </Link>
+              <Link to="#" className="theme-btn style-2">
+                Get a demo{" "}
+                <i className="fa-sharp fa-regular fa-arrow-right"></i>
+              </Link>
             </div>
           </div>
         </div>
         <div className="container-fluid">
           <div className="footer-widgets-wrapper">
-            <div className="row jus">
+            <div className="row jus" id="footer">
               <div className="col-xl-5 col-lg-4 col-md-6">
                 <div className="single-footer-widget">
                   <div className="widget-head">
                     <Link to="/">
-                      <img src="/assets/img/logo/logo.png" alt="img" loading='lazy' />
+                      <img
+                        src="/assets/img/logo/logo.png"
+                        alt="img"
+                        loading="lazy"
+                      />
                     </Link>
                   </div>
                   <div className="footer-content">
-                    <p> It involves the use of CRM software and strategies to effectively manage customer
-                      relationships, improve customer satisfaction, and drive business growth. </p>
+                    <p>
+                      {" "}
+                      It involves the use of CRM software and strategies to
+                      effectively manage customer relationships, improve
+                      customer satisfaction, and drive business growth.{" "}
+                    </p>
                     <div className="social-icon d-flex align-items-center">
-                      <Link to="#"><i className="fab fa-facebook-f"></i></Link>
-                      <Link to="#"><i className="fab fa-twitter"></i></Link>
-                      <Link to="#"><i className="fa-brands fa-linkedin-in"></i></Link>
-                      <Link to="#"><i className="fa-brands fa-youtube"></i></Link>
+                      <Link to="#">
+                        <i className="fab fa-facebook-f"></i>
+                      </Link>
+                      <Link to="#">
+                        <i className="fab fa-twitter"></i>
+                      </Link>
+                      <Link to="#">
+                        <i className="fa-brands fa-linkedin-in"></i>
+                      </Link>
+                      <Link to="#">
+                        <i className="fa-brands fa-youtube"></i>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -47,22 +67,23 @@ export default function Footer() {
                   <ul className="list-area">
                     <li>
                       <Link to="#">
-                        Admission Management System <span className='text-primary fw-bold'>(AMS)</span>
+                        Admission Management System{" "}
+                        <span className="text-primary fw-bold">(AMS)</span>
                       </Link>
                     </li>
                     <li>
                       <Link to="#">
-                        Learning Management System <span className='text-primary fw-bold'>(LMS)</span>
+                        Learning Management System{" "}
+                        <span className="text-primary fw-bold">(LMS)</span>
                       </Link>
                     </li>
                     <li>
-                      <Link to="#">
-                        Online Examination Portal
-                      </Link>
+                      <Link to="#">Online Examination Portal</Link>
                     </li>
                     <li>
                       <Link to="#">
-                        Customer Relationship Management <span className='text-primary fw-bold'>(CRM)</span>
+                        Customer Relationship Management{" "}
+                        <span className="text-primary fw-bold">(CRM)</span>
                       </Link>
                     </li>
                   </ul>
@@ -75,34 +96,23 @@ export default function Footer() {
                   </div>
                   <ul className="list-area">
                     <li>
-                      <Link to="#">
-                        About Us
-                      </Link>
+                      <Link to="#">About Us</Link>
                     </li>
                     <li>
-                      <Link to="#">
-                        Pricing
-                      </Link>
+                      <Link to="#">Pricing</Link>
                     </li>
                     <li>
-                      <Link to="/blogs">
-                        Blogs
-                      </Link>
+                      <Link to="/blogs">Blogs</Link>
                     </li>
                     <li>
-                      <Link to="/terms-conditions">
-                        Terms & Conditions
-                      </Link>
+                      <Link to="/terms-conditions">Terms & Conditions</Link>
                     </li>
-                     <li>
-                      <Link to="/privacy-policy">
-                        Privacy Policy
-                      </Link>
+                    <li>
+                      <Link to="/privacy-policy">Privacy Policy</Link>
                     </li>
                   </ul>
                 </div>
               </div>
-
             </div>
           </div>
           <div className="footer-contact-info">
@@ -110,27 +120,45 @@ export default function Footer() {
               <div className="icon">
                 <i className="fa-sharp fa-solid fa-phone-volume"></i>
               </div>
-              <h5><Link to="tel:+91 8851920153"> +91 8851920153 </Link></h5>
+              <h5>
+                <Link to="tel:+91 8851920153"> +91 8851920153 </Link>
+              </h5>
             </div>
             <div className="icon-items">
               <div className="icon">
                 <i className="fa-solid fa-envelope"></i>
               </div>
-              <h5><Link to="mailto: "><span className="__cf_email__" data-cfemail="fc95929a93bc99849d918c9099d29f9391">[email&#160;protected]</span></Link></h5>
+              <h5>
+                {" "}
+                <Link
+                  to="mailto:info@edtechinnovate.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  info@edtechinnovate.com
+                </Link>
+              </h5>
             </div>
             <div className="icon-items">
               <div className="icon">
                 <i className="fa-sharp fa-solid fa-location-dot"></i>
               </div>
               <h5>
-                <Link to="#"> A-18, S1, Second Floor, Sector 59, Noida UP 201301 </Link>
+                <Link to="#">
+                  {" "}
+                  A-18, S1, Second Floor, Sector 59, Noida UP 201301{" "}
+                </Link>
               </h5>
             </div>
           </div>
           <div className="footer-bottom">
             <div className="footer-bottom-wrapper">
               <p className="text-center">
-                Copyright 2025 All rights are reserved By <Link to="#" className='fw-bold'> Edtech Innovate Pvt Ltd</Link>
+                Copyright 2025 All rights are reserved By{" "}
+                <Link to="#" className="fw-bold">
+                  {" "}
+                  Edtech Innovate Pvt Ltd
+                </Link>
               </p>
             </div>
           </div>

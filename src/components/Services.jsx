@@ -81,7 +81,7 @@ export default function Services() {
                 </div>
 
                 {/* Services grid */}
-                <div className="row">
+                <div className="row" id='service'>
                     {servicesData.map((service) => (
                         <div
                             key={service.id}

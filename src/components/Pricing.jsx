@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Pricing({ pricing = [] }) {
   const styles = ["", "style-2", "style-3"];
   return (
-    <section
+    <section 
       className="pricing-section section-padding fix"
       style={{ backgroundImage: "url('/assets/img/pricing-bg.png')" }}
     >
@@ -22,7 +22,7 @@ export default function Pricing({ pricing = [] }) {
           </p>
         </div>
 
-        <div className="tab-content">
+        <div className="tab-content" id="pricing">
           <div
             id="Yearly"
             className="tab-pane fade show active"
@@ -64,7 +64,7 @@ export default function Pricing({ pricing = [] }) {
                           </div>
                           <h3>{plan.category_name}</h3>
                           <div className="pricing-text">
-                            <h2>${plan.discout_price}</h2>
+                            <h2>₹{plan.discout_price}</h2>
                             <div className="price">
                               <span>
                                 <del>${plan.actual_price}</del> Off

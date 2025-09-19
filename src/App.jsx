@@ -12,6 +12,7 @@ import BuyNow from "./pages/BuyNow";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Success from "./pages/Success";
 import Fail from "./pages/Fail";
+import Pricing from "./components/Pricing";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <Route path="/" element={<RootLayout />}>
         {/* child routes inside RootLayout */}
         <Route index element={<Home />} />
+        <Route path="#pricing" element={<Pricing />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/success" element={<Success />} />
@@ -26,7 +28,7 @@ export default function App() {
         <Route path="/buy-now" element={<BuyNow />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:slug" element={<BlogDetails />} />
-        <Route path="/pay/:planId" element={<BuyNow/>} />
+        <Route path="/pay/:planId" element={<BuyNow />} />
 
         {/* <Route path="about" element={<About />} /> */}
         {/* <Route path="contact" element={<Contact />} /> */}

@@ -322,7 +322,7 @@ const handleSubmit = async (e) => {
                     </div>
                     <h3>{selectedPlan.category_name}</h3>
                     <div className="pricing-text">
-                      <h2>${selectedPlan.discout_price}</h2>
+                      <h2>₹{selectedPlan.discout_price}</h2>
                       <div className="price">
                         <span>
                           <del>${selectedPlan.actual_price}</del> Off
