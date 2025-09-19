@@ -99,16 +99,17 @@ export default function Footer() {
                       <Link to="#">About Us</Link>
                     </li>
                     <li>
-                      <Link to="#">Pricing</Link>
-                    </li>
-                    <li>
-                      <Link to="/blogs">Blogs</Link>
-                    </li>
-                    <li>
-                      <Link to="/terms-conditions">Terms & Conditions</Link>
+                      <Link to="/terms-conditions">
+                        Terms & Conditions
+                      </Link>
                     </li>
                     <li>
                       <Link to="/privacy-policy">Privacy Policy</Link>
+                    </li>
+                    <li>
+                      <Link to="/cancellation-and-refund-policy">
+                        Cancellation & Refund Policy
+                      </Link>
                     </li>
                   </ul>
                 </div>
