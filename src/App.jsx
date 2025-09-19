@@ -11,6 +11,7 @@ import BlogDetails from "./pages/BlogDetails";
 import BuyNow from "./pages/BuyNow";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Success from "./pages/Success";
+import RefundPolicy from "./pages/RefundPolicy";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="cancellation-and-refund-policy" element={<RefundPolicy />} />
         <Route path="/success" element={<Success />} />
         <Route path="/buy-now" element={<BuyNow />} />
         <Route path="/blogs" element={<Blogs />} />

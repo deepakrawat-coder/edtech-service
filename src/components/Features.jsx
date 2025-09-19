@@ -1,92 +1,103 @@
-import { Link } from 'react-router-dom'
+import { useEffect, useRef } from "react";
 
-export default function Features() {
+
+export default function Testimonials() {
+    const sliderRef = useRef(null);
+
+    // ✅ JSON Data for testimonials
+    const features = [
+        {
+            id: 1,
+            title: "Sales Force Automation id1",
+            desc: "With comprehensive lead management tools, businesses can capture leads from various sources, track their interactions, and prioritize follow-ups. By customizing.",
+            img: "https://placehold.co/400x300",
+        },
+        {
+            id: 2,
+            title: "Sales Force Automation id2",
+            desc: "With comprehensive lead management tools, businesses can capture leads from various sources, track their interactions, and prioritize follow-ups. By customizing.",
+            img: "https://placehold.co/400x300",
+        },
+        {
+            id: 1,
+            title: "Sales Force Automation id3",
+            desc: "With comprehensive lead management tools, businesses can capture leads from various sources, track their interactions, and prioritize follow-ups. By customizing.",
+            img: "https://placehold.co/400x300",
+        },
+    ];
+
+    useEffect(() => {
+        if (window.Swiper && sliderRef.current) {
+            new window.Swiper(sliderRef.current, {
+                spaceBetween: 30,
+                speed: 3000,
+                loop: true,
+                // autoplay: {
+                //     delay: 3000,
+                //     disableOnInteraction: false,
+                // },
+                navigation: {
+                    nextEl: ".array-next",
+                    prevEl: ".array-prev",
+                },
+                breakpoints: {
+                    991: { slidesPerView: 1 },
+                    767: { slidesPerView: 1 },
+                    575: { slidesPerView: 1 },
+                    0: { slidesPerView: 1 },
+                },
+            });
+        }
+    }, []);
+
     return (
-        <>
-            <section className="project-section style-1 fix section-padding">
-                <div className="container">
-                    <div className="section-title text-center mb-78">
-                        <div className="sub-text justify-content-center wow fadeInUp">
-                            <img src="/assets/img/star.png" alt="img" loading='lazy' />
-                            <h6> Appreciation feature</h6> <img src="/assets/img/star.png" alt="img" loading='lazy' />
-                        </div>
-                        <h2 className="title-anim"> Edtech CRM A unique way business</h2 >
-                        <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
-                            CRM management is comprehensive contact management, allowing businesses to centralize <br /> and
-                            organize customer information for easy access.
-                        </p>
+        <section className="testimonial-section section-padding">
+            <div className="container">
+                <div className="section-title text-center mb-40">
+                    <div className="sub-text justify-content-center">
+                        <img src="/assets/img/star.png" alt="img" loading='lazy' />
+                        <h6> features </h6>
+                        <img src="/assets/img/star.png" alt="img" loading='lazy' />
                     </div>
-                    <div className="project-main-wrapper">
-                        <div className="project-wrapper">
-                            <div className="project-content">
-                                <span className="wow fadeInUp">01.</span>
-                                <h3 className="wow fadeInUp" data-wow-delay=".3s"><Link to="project-details.html">Sales Force
-                                    Automation</Link></h3>
-                                <p className="wow fadeInUp" data-wow-delay=".3s">With comprehensive lead management tools,
-                                    businesses can capture leads from various sources, track their interactions, and prioritize
-                                    follow-ups. By customizing.</p>
-                                {/* <Link to="project-details.html" className="link-btn wow fadeInUp" data-wow-delay=".5s">Learn more<i
-                                    className="fa-sharp fa-regular fa-arrow-right"></i></Link> */}
+                    <h2 className="title-anim mb-3"> Edtech CRM A unique way business </h2>
+                    <p> CRM management is comprehensive contact management, allowing businesses to centralize <br /> and organize customer information for easy access. </p>
+                </div>
+
+                {/* ✅ Swiper */}
+                <div className="swiper testimonial-slider" ref={sliderRef}>
+                    <div className="swiper-wrapper">
+                        {features.map((t) => (
+                            <div className="swiper-slide" key={t.id}>
+                                <div className="testimonial-box-items">
+                                    <div className="row align-items-center">
+                                        <div className="col-12 col-lg-6">
+                                            <div className="feature-content mb-4">
+                                            <h3 className="wow fadeInUp mb-2" data-wow-delay=".3s"> {t.title} </h3>
+                                            <p className="wow fadeInUp" data-wow-delay=".3s"> {t.desc} </p>
+                                                </div>
+                                        </div>
+                                        <div className="col-12 col-lg-6">
+                                            <div className="feature-content">
+                                            <img src={t.img} className="img-fluid w-100 rounded-3" alt={t.title} loading='lazy' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="project-thumb">
-                                <img src="/assets/img/project/01.png" alt="img" loading='lazy' />
-                            </div>
-                        </div>
-                        <div className="project-wrapper style-padding style-2">
-                            <div className="project-thumb">
-                                <img src="/assets/img/project/02.png" alt="img" loading='lazy' />
-                            </div>
-                            <div className="project-content">
-                                <span className="wow fadeInUp">02.</span>
-                                <h3 className="wow fadeInUp" data-wow-delay=".3s"><Link to="project-details.html">Lead Management</Link>
-                                </h3>
-                                <p className="wow fadeInUp" data-wow-delay=".5s">With comprehensive lead management tools,
-                                    businesses can capture leads from various sources, track their interactions, and prioritize
-                                    follow-ups. By customizing.</p>
-                                {/* <Link to="project-details.html" className="link-btn wow fadeInUp" data-wow-delay=".3s">Learn more<i
-                                    className="fa-sharp fa-regular fa-arrow-right"></i></Link> */}
-                            </div>
-                        </div>
-                        <div className="project-wrapper style-3">
-                            <div className="project-content">
-                                <span className="wow fadeInUp">03.</span>
-                                <h3 className="wow fadeInUp" data-wow-delay=".3s"><Link to="project-details.html">Customer
-                                    Service</Link></h3>
-                                <p className="wow fadeInUp" data-wow-delay=".5s">By centralizing customer data, tracking
-                                    interactions, and analyzing buying behavior, Sales CRM equips sales teams with the insights
-                                    and tools they need to close deals.</p>
-                                {/* <Link to="project-details.html" className="link-btn wow fadeInUp" data-wow-delay=".3s">Learn more<i
-                                    className="fa-sharp fa-regular fa-arrow-right"></i></Link> */}
-                            </div>
-                            <div className="project-thumb">
-                                <img src="/assets/img/project/03.png" alt="img" loading='lazy' />
-                            </div>
-                        </div>
-                        <div className="project-wrapper style-padding style-4">
-                            <div className="project-thumb">
-                                <img src="/assets/img/project/04.png" alt="img" loading='lazy' />
-                            </div>
-                            <div className="project-content">
-                                <span className="wow fadeInUp">04.</span>
-                                <h3 className="wow fadeInUp" data-wow-delay=".3s"><Link to="project-details.html">Multichannel
-                                    Marketing</Link>
-                                </h3>
-                                <p className="wow fadeInUp" data-wow-delay=".5s">With comprehensive lead management tools,
-                                    businesses can capture leads from various sources, track their interactions, and prioritize
-                                    follow-ups. By customizing.</p>
-                                {/* <Link to="project-details.html" className="link-btn wow fadeInUp" data-wow-delay=".3s">Learn more<i
-                                    className="fa-sharp fa-regular fa-arrow-right"></i></Link> */}
-                            </div>
-                        </div>
-                        <div className="project-button wow fadeInUp" data-wow-delay=".3s">
-                            <Link to="#" className="theme-btn">More Features <i
-                                className="fa-sharp fa-regular fa-arrow-right"></i></Link>
-                            <Link to="#" className="theme-btn style-2">Start free trial <i
-                                className="fa-sharp fa-regular fa-arrow-right"></i></Link>
-                        </div>
+                        ))}
+                    </div>
+
+                    {/* Navigation */}
+                    <div className="array-button justify-content-center pt-5">
+                        <button className="array-prev">
+                            <i className="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button className="array-next">
+                            <i className="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
-            </section>
-        </>
-    )
+            </div>
+        </section>
+    );
 }

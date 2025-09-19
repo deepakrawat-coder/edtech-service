@@ -127,10 +127,10 @@ export default function Services() {
                     className="service-button text-center mb-1 wow fadeInUp"
                     data-wow-delay=".3s"
                 >
-                    <Link to="#" className="theme-btn">
+                    {/* <Link to="#" className="theme-btn">
                         See All Services{" "}
                         <i className="fa-sharp fa-regular fa-arrow-right"></i>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </section>

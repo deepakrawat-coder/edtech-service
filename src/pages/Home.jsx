@@ -11,6 +11,7 @@ import Testimonials from "../components/Testimonials";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { isLMSProduct } from "../helper";
+import AboutUsSection from "../components/AboutUsSection";
 
 export default function Home() {
   const [clients, setClients] = useState([]);
@@ -32,6 +33,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <AboutUsSection />
       <Brands clients={clients} />
       <Services />
       <Features />
