@@ -4,36 +4,109 @@ import { useData } from "../context/DataContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 export default function BuyNow() {
   const { planId } = useParams();
   const isFreeTrial = planId === "freeTrial";
   const { plains } = useData();
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     number: "",
     message: "",
-    company_name:"",
+    company_name: "",
     agree: false,
   });
-  
+
   const [loading, setLoading] = useState(false);
   const [responseMsg, setResponseMsg] = useState("");
   const [showModal, setShowModal] = useState(false);
 
-  // Handle form input changes
+  // Allow only letters and spaces for text input
+  const handleTextKeyPress = (e) => {
+    const regex = /^[A-Za-z\s]$/;
+    if (!regex.test(e.key)) {
+      e.preventDefault();
+    }
+  };
+
+  // Allow only numbers
+  const handleNumberKeyPress = (e) => {
+    const regex = /^[0-9]$/;
+    if (!regex.test(e.key)) {
+      e.preventDefault();
+    }
+  };
+
+  // Handle form input changes with validation
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+    
+    let processedValue = value;
+    
+    // Apply validation based on field type
+    if (name === "name" || name === "company_name") {
+      // Remove numbers and special characters from name fields
+      processedValue = value.replace(/[^A-Za-z\s]/g, "");
+    } else if (name === "number") {
+      // Remove non-numeric characters and limit to 10 digits
+      processedValue = value.replace(/\D/g, "").slice(0, 10);
+    }
+    
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: type === "checkbox" ? checked : processedValue,
     }));
   };
 
+  // Enhanced validation for form submission
+  const validateForm = () => {
+    if (!formData.agree) {
+      toast.error("You must agree to the Terms & Conditions.");
+      return false;
+    }
+
+    if (!formData.name.trim()) {
+      toast.error("Please enter your name.");
+      return false;
+    }
+
+    if (!formData.email.trim()) {
+      toast.error("Please enter your email.");
+      return false;
+    }
+
+    if (!formData.number.trim() || formData.number.length !== 10) {
+      toast.error("Please enter a valid 10-digit mobile number.");
+      return false;
+    }
+
+    if (!formData.company_name.trim()) {
+      toast.error("Please enter your institute/company name.");
+      return false;
+    }
+
+    if (!formData.message.trim()) {
+      toast.error("Please enter your address.");
+      return false;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address.");
+      return false;
+    }
+
+    return true;
+  };
+
   // Find the selected plan (if not free trial)
-  const selectedPlan = isFreeTrial ? null : plains.find((item) => item.plain_id === planId);
-  
+  const selectedPlan = isFreeTrial
+    ? null
+    : plains.find((item) => item.plain_id === planId);
+
   // If it's not a free trial and no plan is found
   if (!isFreeTrial && !selectedPlan) {
     return (
@@ -64,8 +137,7 @@ export default function BuyNow() {
   // First step → just open modal
   const handlePreview = (e) => {
     e.preventDefault();
-    if (!formData.agree) {
-      alert("You must agree to the Terms & Conditions.");
+    if (!validateForm()) {
       return;
     }
     setShowModal(true);
@@ -73,6 +145,10 @@ export default function BuyNow() {
 
   // Confirm inside modal → Call API for payment
   const handleConfirmPayment = async () => {
+    if (!validateForm()) {
+      return;
+    }
+
     setLoading(true);
     setResponseMsg("");
 
@@ -83,15 +159,11 @@ export default function BuyNow() {
       ...formData,
     };
 
-    console.log("Data sent to API:", dataToSend);
-
     try {
       const res = await axios.post(
         "http://edtech-web.local/admin/app/service/payments/store",
         dataToSend
       );
-
-      console.log("Easebuzz response:", res.data);
 
       if (res.data.status) {
         setResponseMsg("Redirecting to payment...");
@@ -115,74 +187,48 @@ export default function BuyNow() {
     }
   };
 
-  // Handle free trial submission
-  // const handleFreeTrial = async (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-  //   setResponseMsg("");
-
-  //   const dataToSend = {
-  //     plan_id: "freeTrial",
-  //     plan_name: "Free Trial",
-  //     plan_price: 0,
-  //     ...formData,
-  //   };
-
-  //   console.log("Free trial data:", dataToSend);
-
-  //   try {
-  //     const res = await axios.post(
-  //       "http://edtech-web.local/admin/app/service/payments/store",
-  //       dataToSend
-  //     );
-      
-  //     if (res.data.status) {
-  //       setResponseMsg("Free trial request submitted successfully! We'll contact you soon.");
-  //       setFormData({ name: "", email: "", number: "", message: "", agree: false });
-  //     } else {
-  //       setResponseMsg(res.data.message || "Something went wrong");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error submitting free trial:", error);
-  //     setResponseMsg("Something went wrong, please try again.");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
   const handleFreeTrial = async (e) => {
-  e.preventDefault();
-  setLoading(true);
-  setResponseMsg("");
-
-  const dataToSend = {
-    plan_id: "freeTrial",
-    plan_name: "Free Trial",
-    plan_price: 0,
-    ...formData,
-  };
-
-  console.log("Free trial data:", dataToSend);
-
-  try {
-    const res = await axios.post(
-      "http://edtech-web.local/admin/app/service/payments/store",
-      dataToSend
-    );
-
-    if (res.data.status) {
-      toast.success(res.data.message);
-      setFormData({ name: "", email: "", number: "", message: "",company_name:"", agree: false });
-    } else {
-      toast.error(res.data.message || "⚠️ Something went wrong");
+    e.preventDefault();
+    if (!validateForm()) {
+      return;
     }
-  } catch (error) {
-    console.error("Error submitting free trial:", error);
-    toast.error("❌ Something went wrong, please try again.");
-  } finally {
-    setLoading(false);
-  }
-};
 
+    setLoading(true);
+    setResponseMsg("");
+
+    const dataToSend = {
+      plan_id: "freeTrial",
+      plan_name: "Free Trial",
+      plan_price: 0,
+      ...formData,
+    };
+
+    try {
+      const res = await axios.post(
+        "http://edtech-web.local/admin/app/service/payments/store",
+        dataToSend
+      );
+
+      if (res.data.status) {
+        toast.success(res.data.message);
+        setFormData({
+          name: "",
+          email: "",
+          number: "",
+          message: "",
+          company_name: "",
+          agree: false,
+        });
+      } else {
+        toast.error(res.data.message || "⚠️ Something went wrong");
+      }
+    } catch (error) {
+      console.error("Error submitting free trial:", error);
+      toast.error("❌ Something went wrong, please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -257,14 +303,22 @@ export default function BuyNow() {
               )}
 
               {/* Form Section */}
-              <div className={`col-12 ${isFreeTrial ? 'col-md-8 mx-auto' : 'col-md-8'}`}>
+              <div
+                className={`col-12 ${
+                  isFreeTrial ? "col-md-8 mx-auto" : "col-md-8"
+                }`}
+              >
                 <div className="contact-form-wrapper style1 shadow-sm border border-1">
                   <div className="section-title style5 mb-25">
                     <h4 className="subtitle">
-                      {isFreeTrial ? "Free Trial Request Form" : "Payment Details"}
+                      {isFreeTrial
+                        ? "Free Trial Request Form"
+                        : "Payment Details"}
                     </h4>
                   </div>
-                  <form onSubmit={isFreeTrial ? handleFreeTrial : handlePreview}>
+                  <form
+                    onSubmit={isFreeTrial ? handleFreeTrial : handlePreview}
+                  >
                     <div className="row g-3">
                       <div className="col-12">
                         <div className="form-clt">
@@ -274,8 +328,10 @@ export default function BuyNow() {
                             id="name"
                             value={formData.name}
                             onChange={handleChange}
+                            onKeyPress={handleTextKeyPress}
                             placeholder="Username*"
                             required
+                            maxLength={50}
                           />
                         </div>
                       </div>
@@ -300,12 +356,14 @@ export default function BuyNow() {
                             id="number"
                             value={formData.number}
                             onChange={handleChange}
-                            placeholder="Mobile*"
+                            onKeyPress={handleNumberKeyPress}
+                            maxLength={10}
+                            placeholder="Mobile* (10 digits)"
                             required
                           />
                         </div>
                       </div>
-                       <div className="col-12">
+                      <div className="col-12">
                         <div className="form-clt">
                           <input
                             type="text"
@@ -313,7 +371,10 @@ export default function BuyNow() {
                             id="company_name"
                             value={formData.company_name}
                             onChange={handleChange}
-                            placeholder="Institute / Company Name*"                            
+                            onKeyPress={handleTextKeyPress}
+                            placeholder="Institute / Company Name*"
+                            required
+                            maxLength={100}
                           />
                         </div>
                       </div>
@@ -326,6 +387,8 @@ export default function BuyNow() {
                             onChange={handleChange}
                             placeholder="Address*"
                             required
+                            maxLength={500}
+                            rows={4}
                           ></textarea>
                         </div>
                       </div>
@@ -354,15 +417,16 @@ export default function BuyNow() {
                           className="theme-btn"
                           disabled={loading}
                         >
-                          {loading 
-                            ? "Processing..." 
-                            : isFreeTrial 
-                              ? "Request Free Trial" 
-                              : "Preview & Pay"
-                          }
+                          {loading
+                            ? "Processing..."
+                            : isFreeTrial
+                            ? "Request Free Trial"
+                            : "Preview & Pay"}
                           <i className="fa-solid fa-arrow-right ms-1"></i>
                         </button>
-                        {responseMsg && <p className="mt-2">{responseMsg}</p>}
+                        {responseMsg && (
+                          <p className="mt-2 text-center">{responseMsg}</p>
+                        )}
                       </div>
                     </div>
                   </form>
@@ -405,14 +469,18 @@ export default function BuyNow() {
                       </h4>
                       <div className="my-1 ps-0 ms-0 text-start rounded-3">
                         <h2 className="font-bold text-success mb-0">
-                          <span className="">₹{selectedPlan.discout_price}</span>
+                          <span className="">
+                            ₹{selectedPlan.discout_price}
+                          </span>
                           <span className="fs-5 text-danger ms-2">
                             <del>₹{selectedPlan.actual_price}/Year</del>
                           </span>
                         </h2>
                       </div>
 
-                      <h6 className="fw-semi-bold text-dark mb-2">Key Features:</h6>
+                      <h6 className="fw-semi-bold text-dark mb-2">
+                        Key Features:
+                      </h6>
                       <ul className="list-unstyled row">
                         {features.map((f, i) => (
                           <li
@@ -446,12 +514,15 @@ export default function BuyNow() {
                   {/* User Details */}
                   <div className="col-md-12">
                     <div className="p-3">
-                      <h6 className="fw-bold fs-3 text-dark mb-2">Your Information</h6>
+                      <h6 className="fw-bold fs-3 text-dark mb-2">
+                        Your Information
+                      </h6>
                       <p>
                         <strong>Name:</strong> {formData.name}
                       </p>
-                       <p>
-                        <strong>Institute / Company Name:</strong> {formData.company_name}
+                      <p>
+                        <strong>Institute / Company Name:</strong>{" "}
+                        {formData.company_name}
                       </p>
                       <p>
                         <strong>Email:</strong> {formData.email}
@@ -482,7 +553,8 @@ export default function BuyNow() {
                 >
                   {loading ? (
                     <span>
-                      <i className="fa fa-spinner fa-spin me-2"></i> Processing...
+                      <i className="fa fa-spinner fa-spin me-2"></i>{" "}
+                      Processing...
                     </span>
                   ) : (
                     <span>✅ Confirm & Pay</span>

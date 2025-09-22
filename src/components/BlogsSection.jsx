@@ -25,7 +25,7 @@ export default function BlogSection({ blogData }) {
   //         title: "Empowering Startups & Small Businesses",
   //     },
   // ];
-  // console.log(blogData);
+
   return (
     <section className="news-section section-padding fix">
       <div className="container">

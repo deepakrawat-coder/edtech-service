@@ -15,13 +15,13 @@ export const DataProvider = ({ children }) => {
   const [about, setAbout] = useState([]);
   useEffect(() => {
     axios
-      .get("http://react-edtech.local/admin/app/service/api/lmsApi", {
+      .get("http://edtech-web.local/admin/app/service/api/lmsApi", {
         headers: { "X-Pid": "3" },
       })
       .then((res) => {
-        // console.log(res.data);
+      
         if (res.data.status === 200) {
-          console.log(res.data.data);
+          // console.log(res.data.data);
           setClients(res.data.data.clientLogos);
           setTestimonials(res.data.data.testimonialsData);
           setPlains(res.data.data.plainsData);

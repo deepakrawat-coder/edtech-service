@@ -1,9 +1,10 @@
 import { useEffect, useRef } from "react";
+import DOMPurify from 'dompurify';
 
 export default function Testimonials({ keyFeatures }) {
   const sliderRef = useRef(null);
   keyFeatures.map((items) => {
-    console.log(items);
+    // console.log(items);
   });
   // ✅ JSON Data for testimonials
   // const features = [
@@ -85,10 +86,16 @@ export default function Testimonials({ keyFeatures }) {
                           {" "}
                           {t.title}{" "}
                         </h3>
-                        <p className="wow fadeInUp" data-wow-delay=".3s">
+                        {/* <p className="wow fadeInUp" data-wow-delay=".3s">
                           {" "}
                           {t.message}{" "}
-                        </p>
+                        </p> */}
+                        <p
+                  className="wow fadeInUp" data-wow-delay=".3s"
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(t.message),
+                  }}
+                ></p>
                       </div>
                     </div>
                     <div className="col-12 col-lg-6">
