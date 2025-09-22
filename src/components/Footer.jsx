@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import StartTrial from './StartTrial';
 
 // src/components/Footer.jsx
 export default function Footer() {
@@ -10,10 +11,11 @@ export default function Footer() {
             <h2 className="title-anim">Try It Free Explore for 7 Days</h2>
             <p>Start building your dream CRM pipeline today</p>
             <div className="project-button mt-40">
-              <Link to="#" className="theme-btn">
+              {/* <Link to="#" className="theme-btn">
                 Start free trial{" "}
                 <i className="fa-sharp fa-regular fa-arrow-right"></i>
-              </Link>
+              </Link> */}
+              <StartTrial/>
               <Link to="#" className="theme-btn style-2">
                 Get a demo{" "}
                 <i className="fa-sharp fa-regular fa-arrow-right"></i>

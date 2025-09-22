@@ -85,7 +85,7 @@ export default function Services({services}) {
                     {services.map((service) => (
                         <div
                             key={service.id}
-                            className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp position-relative"
+                            className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp position-relative d-flex align-items-stretch"
                             // data-wow-delay={service.delay}
                         >
                             <div className="service-box-items">

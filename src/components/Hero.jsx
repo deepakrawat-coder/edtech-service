@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import StartTrial from './StartTrial';
 export default function Hero({ banner }) {
   return (
     <>
@@ -35,14 +35,7 @@ export default function Hero({ banner }) {
               </li>
             </ul>
             <div className="hero-button">
-              <Link
-                to="#"
-                className="theme-btn wow fadeInUp"
-                data-wow-delay=".3s"
-              >
-                Start free trial{" "}
-                <i className="fa-sharp fa-regular fa-arrow-right"></i>
-              </Link>
+              <StartTrial/>
               <Link
                 to="#"
                 className="theme-btn style-2 video-popup wow fadeInUp"
