@@ -14,34 +14,37 @@ import Success from "./pages/Success";
 import Fail from "./pages/Fail";
 import Pricing from "./components/Pricing";
 import RefundPolicy from "./pages/RefundPolicy";
-
+import { ToastContainer } from "react-toastify";
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<RootLayout />}>
-        {/* child routes inside RootLayout */}
-        <Route index element={<Home />} />
-        <Route path="#pricing" element={<Pricing />} />
-        <Route path="/terms-conditions" element={<TermsConditions />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route
-          path="cancellation-and-refund-policy"
-          element={<RefundPolicy />}
-        />
-        <Route path="/success" element={<Success />} />
-        <Route path="/fail" element={<Fail />} />
-        <Route path="/buy-now/:" element={<BuyNow />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blog/:slug" element={<BlogDetails />} />
-        <Route path="/pay/:planId" element={<BuyNow />} />
-        {/* <Route path="/pay/:freeTrial" element={<BuyNow />} />  */}
+    <>
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          {/* child routes inside RootLayout */}
+          <Route index element={<Home />} />
+          <Route path="#pricing" element={<Pricing />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route
+            path="cancellation-and-refund-policy"
+            element={<RefundPolicy />}
+          />
+          <Route path="/success" element={<Success />} />
+          <Route path="/fail" element={<Fail />} />
+          <Route path="/buy-now/:" element={<BuyNow />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog/:slug" element={<BlogDetails />} />
+          <Route path="/pay/:planId" element={<BuyNow />} />
+          {/* <Route path="/pay/:freeTrial" element={<BuyNow />} />  */}
 
-        {/* <Route path="about" element={<About />} /> */}
-        {/* <Route path="contact" element={<Contact />} /> */}
+          {/* <Route path="about" element={<About />} /> */}
+          {/* <Route path="contact" element={<Contact />} /> */}
 
-        {/* catch all unmatched routes */}
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+          {/* catch all unmatched routes */}
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+      <ToastContainer position="top-right" autoClose={3000} />
+    </>
   );
 }

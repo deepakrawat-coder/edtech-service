@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useData } from "../context/DataContext";
 import axios from "axios";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function BuyNow() {
   const { planId } = useParams();
   const isFreeTrial = planId === "freeTrial";
@@ -13,6 +14,7 @@ export default function BuyNow() {
     email: "",
     number: "",
     message: "",
+    company_name:"",
     agree: false,
   });
   
@@ -114,39 +116,73 @@ export default function BuyNow() {
   };
 
   // Handle free trial submission
-  const handleFreeTrial = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setResponseMsg("");
+  // const handleFreeTrial = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setResponseMsg("");
 
-    const dataToSend = {
-      plan_id: "freeTrial",
-      plan_name: "Free Trial",
-      plan_price: 0,
-      ...formData,
-    };
+  //   const dataToSend = {
+  //     plan_id: "freeTrial",
+  //     plan_name: "Free Trial",
+  //     plan_price: 0,
+  //     ...formData,
+  //   };
 
-    console.log("Free trial data:", dataToSend);
+  //   console.log("Free trial data:", dataToSend);
 
-    try {
-      const res = await axios.post(
-        "http://edtech-web.local/admin/app/service/payments/store",
-        dataToSend
-      );
+  //   try {
+  //     const res = await axios.post(
+  //       "http://edtech-web.local/admin/app/service/payments/store",
+  //       dataToSend
+  //     );
       
-      if (res.data.status) {
-        setResponseMsg("Free trial request submitted successfully! We'll contact you soon.");
-        setFormData({ name: "", email: "", number: "", message: "", agree: false });
-      } else {
-        setResponseMsg(res.data.message || "Something went wrong");
-      }
-    } catch (error) {
-      console.error("Error submitting free trial:", error);
-      setResponseMsg("Something went wrong, please try again.");
-    } finally {
-      setLoading(false);
-    }
+  //     if (res.data.status) {
+  //       setResponseMsg("Free trial request submitted successfully! We'll contact you soon.");
+  //       setFormData({ name: "", email: "", number: "", message: "", agree: false });
+  //     } else {
+  //       setResponseMsg(res.data.message || "Something went wrong");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error submitting free trial:", error);
+  //     setResponseMsg("Something went wrong, please try again.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+  const handleFreeTrial = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setResponseMsg("");
+
+  const dataToSend = {
+    plan_id: "freeTrial",
+    plan_name: "Free Trial",
+    plan_price: 0,
+    ...formData,
   };
+
+  console.log("Free trial data:", dataToSend);
+
+  try {
+    const res = await axios.post(
+      "http://edtech-web.local/admin/app/service/payments/store",
+      dataToSend
+    );
+
+    if (res.data.status) {
+      toast.success(res.data.message);
+      setFormData({ name: "", email: "", number: "", message: "",company_name:"", agree: false });
+    } else {
+      toast.error(res.data.message || "⚠️ Something went wrong");
+    }
+  } catch (error) {
+    console.error("Error submitting free trial:", error);
+    toast.error("❌ Something went wrong, please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <>
@@ -266,6 +302,18 @@ export default function BuyNow() {
                             onChange={handleChange}
                             placeholder="Mobile*"
                             required
+                          />
+                        </div>
+                      </div>
+                       <div className="col-12">
+                        <div className="form-clt">
+                          <input
+                            type="text"
+                            name="company_name"
+                            id="company_name"
+                            value={formData.company_name}
+                            onChange={handleChange}
+                            placeholder="Institute / Company Name*"                            
                           />
                         </div>
                       </div>
@@ -401,6 +449,9 @@ export default function BuyNow() {
                       <h6 className="fw-bold fs-3 text-dark mb-2">Your Information</h6>
                       <p>
                         <strong>Name:</strong> {formData.name}
+                      </p>
+                       <p>
+                        <strong>Institute / Company Name:</strong> {formData.company_name}
                       </p>
                       <p>
                         <strong>Email:</strong> {formData.email}
