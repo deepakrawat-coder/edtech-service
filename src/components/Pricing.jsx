@@ -40,7 +40,7 @@ export default function Pricing({ pricing = [] }) {
 
                   return (
                     <div
-                      className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+                      className="col-xl-6 col-lg-6 col-md-6 wow fadeInUp"
                       data-wow-delay={`${0.3 + index * 0.2}s`}
                       key={plan.plain_id}
                     >

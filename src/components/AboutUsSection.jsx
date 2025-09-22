@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function AboutUsSection ({about}) {   
     return (
         <>
-             <section className="project-section style-1 fix section-padding pb-4">
+             <section className="project-section style-1 fix section-padding pb-4" id='about-us'>
                 <div className="container">
                     <div className="section-title text-center mb-5">
                         <div className="sub-text justify-content-center wow fadeInUp">

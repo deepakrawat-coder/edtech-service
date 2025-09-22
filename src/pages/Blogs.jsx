@@ -56,7 +56,7 @@ export default function Blogs () {
                         <img src="/assets/img/star.png" alt="img" loading='lazy' />
                         <h6>Blog & Article</h6> <img src="/assets/img/star.png" alt="img" loading='lazy' />
                     </div>
-                    <h2 className="title-anim"> Our latest articles </h2>
+                    <h2 className="title-anim"> Our latest Blogs </h2>
                 </div>
 
                 <div className="row">
