@@ -35,12 +35,12 @@ export default function BlogSection({ blogData }) {
             <h6>Blog & Article</h6>{" "}
             <img src="/assets/img/star.png" alt="img" loading="lazy" />
           </div>
-          <h2 className="title-anim">Our latest articles</h2>
-          <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
+          <h2 className="title-anim">Our latest Blogs</h2>
+          {/* <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
             Welcome to our FAQS section, where we address common queries and
             provide helpful <br /> solutions to ensure you get the most out of
             our CRM software.
-          </p>
+          </p> */}
         </div>
 
         <div className="row">

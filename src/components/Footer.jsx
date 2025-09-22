@@ -40,21 +40,19 @@ export default function Footer() {
                   <div className="footer-content">
                     <p>
                       {" "}
-                      It involves the use of CRM software and strategies to
-                      effectively manage customer relationships, improve
-                      customer satisfaction, and drive business growth.{" "}
+                      We are a dedicated team of Innovators at Edtech Innovate Pvt. Ltd. We listen to needs and demands of the Educational Institutes and the students in particular. We are focused on imparting smart education to the students and offer state of the art management tools to the institutes all over India and abroad.{" "}
                     </p>
                     <div className="social-icon d-flex align-items-center">
-                      <Link to="#">
+                      <Link to="https://www.facebook.com/EdTechInnovatePvtLtd" aria-label="facebook social media icon" target="_blank">
                         <i className="fab fa-facebook-f"></i>
                       </Link>
-                      <Link to="#">
-                        <i className="fab fa-twitter"></i>
+                      <Link to="https://www.instagram.com/edtech_innovate/" aria-label="instagram social media icon" target="_blank">
+                        <i className="fab fa-instagram"></i>
                       </Link>
-                      <Link to="#">
+                      <Link to="https://www.linkedin.com/company/edtechinnovate" aria-label="linkedin social media icon" target="_blank">
                         <i className="fa-brands fa-linkedin-in"></i>
                       </Link>
-                      <Link to="#">
+                      <Link to="https://www.youtube.com/@EdTechInnovate" aria-label="youtube social media icon" target="_blank">
                         <i className="fa-brands fa-youtube"></i>
                       </Link>
                     </div>
@@ -98,7 +96,7 @@ export default function Footer() {
                   </div>
                   <ul className="list-area">
                     <li>
-                      <Link to="#">About Us</Link>
+                      <Link to="/blogs"> Blogs </Link>  
                     </li>
                     <li>
                       <Link to="/terms-conditions">

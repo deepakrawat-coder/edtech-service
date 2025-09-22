@@ -37,11 +37,11 @@ export default function Testimonials({ testimonialsData }) {
                         <img src="/assets/img/star.png" alt="img" loading='lazy' />
                     </div>
                     <h2 className="title-anim">Check what these clients have to say</h2>
-                    <p>
+                    {/* <p>
                         CRM management is comprehensive contact management, allowing
                         businesses to centralize and organize customer information for easy
                         access.
-                    </p>
+                    </p> */}
                 </div>
 
                 <div className="swiper testimonial-slider" ref={sliderRef}>

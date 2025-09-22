@@ -14,9 +14,7 @@ export default function Marquee() {
                             <div><img src="/assets/img/star-2.png" alt="img" loading='lazy' /></div>
                             <div className="cmn-textslide">Client Satisfaction Work</div>
                             <div><img src="/assets/img/star-2.png" alt="img" loading='lazy' /></div>
-                            <div className="cmn-textslide">High Security Website</div>
-                            <div><img src="/assets/img/star-2.png" alt="img" loading='lazy' /></div>
-                            <div className="cmn-textslide">Discover the World of InnovateTech</div>
+                            <div className="cmn-textslide">High Security</div>
                         </div>
                         <div className="comm">
                             <div><img src="/assets/img/star-2.png" alt="img" loading='lazy' /></div>
@@ -28,9 +26,7 @@ export default function Marquee() {
                             <div><img src="/assets/img/star-2.png" alt="img" loading='lazy' /></div>
                             <div className="cmn-textslide">Client Satisfaction Work</div>
                             <div><img src="/assets/img/star-2.png" alt="img" loading='lazy' /></div>
-                            <div className="cmn-textslide">High Security Website</div>
-                            <div><img src="/assets/img/star-2.png" alt="img" loading='lazy' /></div>
-                            <div className="cmn-textslide">Discover the World of InnovateTech</div>
+                            <div className="cmn-textslide">High Security </div>
                         </div>
                     </div>
                 </div>
