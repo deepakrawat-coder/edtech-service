@@ -62,7 +62,9 @@ export default function BlogSection({ blogData }) {
                     </li>
                   </ul>
                   <h3>
-                    <Link to={`/blog/${blog.Slug}`}>{blog.Name}</Link>
+                    <Link to={`/blog/${blog.Slug}`}>{blog?.Name && blog.Name.length > 35 
+  ? blog.Name.slice(0, 35) + '...' 
+  : blog?.Name}</Link>
                   </h3>
                   <Link to={`/blog/${blog.Slug}`} className="link-btn">
                     Continue Reading

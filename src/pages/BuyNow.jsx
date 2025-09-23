@@ -161,7 +161,7 @@ export default function BuyNow() {
 
     try {
       const res = await axios.post(
-        "http://edtech-web.local/admin/app/service/payments/store",
+        "https://www.edtechinnovate.com/admin/app/service/payments/store",
         dataToSend
       );
 
@@ -205,7 +205,7 @@ export default function BuyNow() {
 
     try {
       const res = await axios.post(
-        "http://edtech-web.local/admin/app/service/payments/store",
+        "https://www.edtechinnovate.com/admin/app/service/payments/store",
         dataToSend
       );
 
