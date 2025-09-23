@@ -68,7 +68,7 @@ export default function BlogSection({ blogData }) {
                   </h3>
                   <Link to={`/blog/${blog.Slug}`} className="link-btn">
                     Continue Reading
-                    <i className="fa-sharp fa-regular fa-arrow-right"></i>
+                    <i class="fa-solid fa-arrow-right"></i>
                   </Link>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function BlogSection({ blogData }) {
           data-wow-delay=".3s"
         >
           <Link to="/blogs" className="theme-btn">
-            See All Blogs <i className="fa-sharp fa-regular fa-arrow-right"></i>
+            See All Blogs <i class="fa-solid fa-arrow-right"></i>
           </Link>
         </div>
       </div>

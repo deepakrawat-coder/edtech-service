@@ -48,13 +48,46 @@ export default function Blogs() {
   const { blogs } = useData();
   return (
     <>
-      <section className="news-section section-padding fix">
-        <div className="container">
-          <div className="section-title text-center mb-40">
-            <div className="sub-text justify-content-center wow fadeInUp">
-              <img src="/assets/img/star.png" alt="img" loading="lazy" />
-              <h6>Blog & Article</h6>{" "}
-              <img src="/assets/img/star.png" alt="img" loading="lazy" />
+        <section className="news-section section-padding fix">
+            <div className="container">
+                <div className="section-title text-center mb-40">
+                    <div className="sub-text justify-content-center wow fadeInUp">
+                        <img src="/assets/img/star.png" alt="img" loading='lazy' />
+                        <h6>Blog & Article</h6> <img src="/assets/img/star.png" alt="img" loading='lazy' />
+                    </div>
+                    <h2 className="title-anim"> Our latest Blogs </h2>
+                </div>
+
+                <div className="row">
+                    {blogs.map((blog) => (
+                        <div className="col-xl-4 col-lg-6 col-md-6 d-flex align-items-stretch" key={blog.id}>
+                            <div className="news-box-items img-custom-anim-top">
+                                <Link to={`/blog/${blog.Slug}`}>
+                                    <div className="news-thumb">
+                                        <img src={blog.Photo} alt={blog.Name}  loading='lazy' />
+                                    </div>
+                                </Link>
+                                <div className="news-content">
+                                    <ul className="post-date">
+                                        <li>
+                                            <Link to={`/blog/${blog.Slug}`}>
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                {blog.date}
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                    <h3>
+                                        <Link to={`/blog/${blog.Slug}`}>{blog.Name}</Link>
+                                    </h3>
+                                    <Link to={`/blog/${blog.Slug}`} className="link-btn">
+                                        Continue Reading
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
             <h2 className="title-anim"> Our latest Blogs </h2>
           </div>

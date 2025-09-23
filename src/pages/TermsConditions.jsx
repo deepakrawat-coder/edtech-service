@@ -19,7 +19,7 @@ export default function TermsConditions() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <i className="fa-regular fa-arrow-right-long"></i>
+                                    <i class="fa-solid fa-arrow-right"></i>
                                 </li>
                                 <li>
                                     Terms & Condition
@@ -27,7 +27,7 @@ export default function TermsConditions() {
                             </ul>
                             <div className="breadcrumb-text-items">
                                 <div id="scrollDown" className="icon wow fadeInUp" data-wow-delay=".3s">
-                                    <i className="fa-regular fa-arrow-down-long"></i>
+                                    <i class="fa-solid fa-arrow-down"></i>
                                 </div>
                                 <p className="wow fadeInUp" data-wow-delay=".5s">
                                     CRM management is comprehensive contact management, allowing businesses.

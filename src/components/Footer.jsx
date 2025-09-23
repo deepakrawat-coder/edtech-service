@@ -18,7 +18,7 @@ export default function Footer() {
               <StartTrial/>
               <Link to="#" className="theme-btn style-2">
                 Get a demo{" "}
-                <i className="fa-sharp fa-regular fa-arrow-right"></i>
+                <i class="fa-solid fa-arrow-right"></i>
               </Link>
             </div>
           </div>
