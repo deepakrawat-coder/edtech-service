@@ -33,7 +33,7 @@ export default function Testimonials({ testimonialsData }) {
                 <div className="section-title text-center mb-40">
                     <div className="sub-text justify-content-center">
                         <img src="/assets/img/star.png" alt="img" loading='lazy' />
-                        <h6>OUR Feedback</h6>
+                        <p className="h6 mb-0">OUR Feedback</p>
                         <img src="/assets/img/star.png" alt="img" loading='lazy' />
                     </div>
                     <h2 className="title-anim">Check what these clients have to say</h2>

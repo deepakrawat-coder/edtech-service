@@ -3,10 +3,10 @@ export default function Brands({clients}) {
   return (
     <div className="brand-section fix section-padding">
       <div className="container">
-        <h5 className="brand-title wow fadeInUp" data-wow-delay=".3s">
+        <p className="brand-title wow fadeInUp h6 font-bold tex-black" data-wow-delay=".3s">
           Trusted By large and small businesses worldwide with{" "}
           <b>Edtech Innovate - CRM</b>
-        </h5>
+        </p>
 
         <div className="mycustom-marque style-border">
           <div className="left-shape"></div>

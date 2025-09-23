@@ -36,7 +36,7 @@ export default function BlogDetails() {
                   <Link to="/"> Home </Link>
                 </li>
                 <li>
-                  <i className="fa-regular fa-arrow-right-long"></i>
+                  <i class="fa-solid fa-arrow-right"></i>
                 </li>
                 <li>{blog.Name}</li>
               </ul>
@@ -46,7 +46,7 @@ export default function BlogDetails() {
                   className="icon wow fadeInUp"
                   data-wow-delay=".3s"
                 >
-                  <i className="fa-regular fa-arrow-down-long"></i>
+<i class="fa-solid fa-arrow-down"></i>
                 </div>
                 <p className="wow fadeInUp" data-wow-delay=".5s">
                   {blog.Meta_Description}
@@ -67,7 +67,7 @@ export default function BlogDetails() {
                 <div className="list-items">
                   <ul className="style-2">
                     <li>
-                      <i className="fa-light fa-calendar-week"></i>
+                      <i className="fa-solid fa-calendar-days"></i>
                       {new Date(blog.Created_At).toLocaleDateString()}
                     </li>
                   </ul>

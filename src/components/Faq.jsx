@@ -1,5 +1,5 @@
 export default function Faq({faqs}) {
-    // JSON data for FAQ
+        // JSON data for FAQ
     // const faqData = [
     //     {
     //         id: "One",
@@ -45,7 +45,7 @@ export default function Faq({faqs}) {
                 <div className="section-title text-center mb-70">
                     <div className="sub-text justify-content-center wow fadeInUp">
                         <img src="/assets/img/star.png" alt="img" loading='lazy' />
-                        <h6>FAQS</h6> <img src="/assets/img/star.png" alt="img" loading='lazy' />
+                        <p className="h6 mb-0">FAQS</p> <img src="/assets/img/star.png" alt="img" loading='lazy' />
                     </div>
                     <h2 className="title-anim">Get Your Have a Questions?</h2>
                     <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">

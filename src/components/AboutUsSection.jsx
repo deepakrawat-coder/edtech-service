@@ -11,10 +11,10 @@ export default function AboutUsSection({ about }) {
           <div className="section-title text-center mb-5">
             <div className="sub-text justify-content-center wow fadeInUp">
               <img src="/assets/img/star.png" alt="img" loading="lazy" />
-              <h6> {about?.[0]?.title} </h6>{" "}
+              <p className="h6 mb-0"> {about?.[0]?.title} </p>{" "}
               <img src="/assets/img/star.png" alt="img" loading="lazy" />
             </div>
-            <h2 className="title-anim"> About Us</h2>
+            <h2 className="title-anim h2"> {about?.[0]?.title}</h2>
             {/* <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
                             CRM management is comprehensive contact management, allowing businesses to centralize <br /> and
                             organize customer information for easy access.

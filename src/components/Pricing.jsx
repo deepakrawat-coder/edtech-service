@@ -11,7 +11,7 @@ export default function Pricing({ pricing = [] }) {
         <div className="section-title text-center mb-80">
           <div className="sub-text justify-content-center wow fadeInUp">
             <img src="/assets/img/star.png" alt="img" loading="lazy" />
-            <h6>PRICING PLAN</h6>
+            <p className="h6 mb-0">PRICING PLAN</p>
             <img src="/assets/img/star.png" alt="img" loading="lazy" />
           </div>
           <h2 className="title-anim">Starter Plan For Everyone</h2>
@@ -74,7 +74,7 @@ export default function Pricing({ pricing = [] }) {
                           </div>
                         </div>
                         <div className="pricing-list">
-                          <h4>Key features:</h4>
+                          <p className="h4 mb-0">Key features:</p>
                           <ul>
                             {features.map((f, i) => (
                               <li key={i}>

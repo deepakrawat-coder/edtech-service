@@ -58,7 +58,7 @@ export default function Testimonials({ keyFeatures }) {
         <div className="section-title text-center mb-40">
           <div className="sub-text justify-content-center">
             <img src="/assets/img/star.png" alt="img" loading="lazy" />
-            <h6> features </h6>
+            <p className="h6 mb-0"> features </p>
             <img src="/assets/img/star.png" alt="img" loading="lazy" />
           </div>
           <h2 className="title-anim mb-3">

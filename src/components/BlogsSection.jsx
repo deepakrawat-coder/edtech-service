@@ -32,7 +32,7 @@ export default function BlogSection({ blogData }) {
         <div className="section-title text-center mb-40">
           <div className="sub-text justify-content-center wow fadeInUp">
             <img src="/assets/img/star.png" alt="img" loading="lazy" />
-            <h6>Blog & Article</h6>{" "}
+            <p className="h6 mb-0 ">Blog & Article</p>{" "}
             <img src="/assets/img/star.png" alt="img" loading="lazy" />
           </div>
           <h2 className="title-anim">Our latest Blogs</h2>
@@ -56,7 +56,7 @@ export default function BlogSection({ blogData }) {
                   <ul className="post-date">
                     <li>
                       <Link to={`/blog/${blog.Slug}`}>
-                        <i className="fa-light fa-calendar-days"></i>
+                        <i className="fa-solid fa-calendar-days"></i>
                         {blog.Created_At}
                       </Link>
                     </li>
