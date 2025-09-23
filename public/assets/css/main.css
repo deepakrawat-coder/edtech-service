@@ -2238,7 +2238,7 @@ span {
 .faq-wrapper .faq-items .accordion .accordion-button::before {
   position: absolute;
   content: "\f063";
-  font-family: "Font Awesome 6 Pro";
+  font-family: "Font Awesome 6 Free";
   font-weight: 700;
   top: 18px;
   right: 30px;

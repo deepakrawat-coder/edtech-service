@@ -15,7 +15,7 @@ export const DataProvider = ({ children }) => {
   const [about, setAbout] = useState([]);
   useEffect(() => {
     axios
-      .get("http://react-edtech.local/admin/app/service/api/lmsApi", {
+      .get("https://www.edtechinnovate.com/admin/app/service/api/lmsApi", {
         headers: { "X-Pid": "3" },
       })
       .then((res) => {

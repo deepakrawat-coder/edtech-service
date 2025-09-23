@@ -90,7 +90,7 @@ export default function Pricing({ pricing = [] }) {
                           
                           <Link to={`/pay/${plan.plain_id}`} className="theme-btn">
                             Pick your plan{" "}
-                            <i className="fa-sharp fa-regular fa-arrow-right"></i>
+                           <i class="fa-solid fa-arrow-right"></i>
                           </Link>
                         </div>
                       </div>

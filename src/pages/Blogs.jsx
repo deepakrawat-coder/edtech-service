@@ -72,7 +72,7 @@ export default function Blogs () {
                                     <ul className="post-date">
                                         <li>
                                             <Link to={`/blog/${blog.Slug}`}>
-                                                <i className="fa-light fa-calendar-days"></i>
+                                                <i class="fa-solid fa-calendar-days"></i>
                                                 {blog.date}
                                             </Link>
                                         </li>
@@ -82,7 +82,7 @@ export default function Blogs () {
                                     </h3>
                                     <Link to={`/blog/${blog.Slug}`} className="link-btn">
                                         Continue Reading
-                                        <i className="fa-sharp fa-regular fa-arrow-right"></i>
+                                        <i class="fa-solid fa-arrow-right"></i>
                                     </Link>
                                 </div>
                             </div>
