@@ -19,14 +19,14 @@ export default function Header() {
                                     {/* <Link className="nav-link active" aria-current="page" to="#"> About Us </Link> */}
                                     <a className="nav-link active" aria-current="page" href="#about-us"> About Us </a>
                                 </li>
-                                <li className="nav-item">
-                                    {/* <Link className="nav-link" to="#pricing"> Pricing </Link> */}
-                                    <a className="nav-link" href="#pricing">Pricing</a>
-                                </li>
-                                <li className="nav-item">
+                                 <li className="nav-item">
                                     {/* <Link className="nav-link" to="#"> Services </Link> */}
                                      <a className="nav-link" href="#service">Services</a>
                                 </li>
+                                <li className="nav-item">
+                                    {/* <Link className="nav-link" to="#pricing"> Pricing </Link> */}
+                                    <a className="nav-link" href="#pricing">Pricing</a>
+                                </li>                               
                                 <li className="nav-item">
                                     {/* <Link className="nav-link" to="#"> Contact Us </Link> */}
                                      <a className="nav-link" href="#footer">Contact Us</a>

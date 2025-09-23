@@ -91,7 +91,7 @@ export default function Testimonials({ keyFeatures }) {
                           {t.message}{" "}
                         </p> */}
                         <p
-                  className="wow fadeInUp" data-wow-delay=".3s"
+                  className="wow fadeInUp font-16" data-wow-delay=".3s"
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(t.message),
                   }}
