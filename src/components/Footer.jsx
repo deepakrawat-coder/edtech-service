@@ -66,26 +66,26 @@ export default function Footer() {
                   </div>
                   <ul className="list-area">
                     <li>
-                      <Link to="#">
+                      <Link to="https://www.edtechinnovate.com/admission-management-system" target="_blank">
                         Admission Management System{" "}
                         <span className="text-primary fw-bold">(AMS)</span>
                       </Link>
                     </li>
                     <li>
-                      <Link to="#">
+                      <Link to="https://www.edtechinnovate.com/learning-management-system" target="_blank">
                         Learning Management System{" "}
                         <span className="text-primary fw-bold">(LMS)</span>
                       </Link>
                     </li>
                     <li>
-                      <Link to="#">Online Examination Portal</Link>
+                      <Link to="https://www.edtechinnovate.com/online-exam-portal" target="_blank">Online Examination Portal</Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link to="#">
                         Customer Relationship Management{" "}
                         <span className="text-primary fw-bold">(CRM)</span>
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>

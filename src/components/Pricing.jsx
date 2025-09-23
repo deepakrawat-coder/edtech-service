@@ -67,7 +67,7 @@ export default function Pricing({ pricing = [] }) {
                             <h2>₹{plan.discout_price}</h2>
                             <div className="price">
                               <span>
-                                <del>${plan.actual_price}</del> Off
+                                <del>₹{plan.actual_price}</del> Off
                               </span>
                               <p>Billed Yearly</p>
                             </div>

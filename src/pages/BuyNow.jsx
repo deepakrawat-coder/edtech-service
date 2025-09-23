@@ -144,48 +144,95 @@ export default function BuyNow() {
   };
 
   // Confirm inside modal → Call API for payment
-  const handleConfirmPayment = async () => {
-    if (!validateForm()) {
-      return;
-    }
+//   const handleConfirmPayment = async () => {
+//     if (!validateForm()) {
+//       return;
+//     }
 
-    setLoading(true);
-    setResponseMsg("");
+//     setLoading(true);
+//     setResponseMsg("");
+// const price = Number(selectedPlan.discout_price.replace(/,/g, ""));
+//     const dataToSend = {
+//       plan_id: planId,
+//       plan_name: selectedPlan.category_name,
+//       plan_price: price,
+//       ...formData,
+//     };
 
-    const dataToSend = {
-      plan_id: planId,
-      plan_name: selectedPlan.category_name,
-      plan_price: selectedPlan.discout_price,
-      ...formData,
-    };
+//     try {
+//       const res = await axios.post(
+//         "http://edtech-web.local/admin/app/service/payments/store",
+//         dataToSend
+//       );
 
-    try {
-      const res = await axios.post(
-        "https://www.edtechinnovate.com/admin/app/service/payments/store",
-        dataToSend
-      );
+//       if (res.data.status) {
+//         setResponseMsg("Redirecting to payment...");
 
-      if (res.data.status) {
-        setResponseMsg("Redirecting to payment...");
+//         const token = res.data.token;
+//         if (token) {
+//           const paymentUrl = `https://pay.easebuzz.in/pay/${token}`;
+//           window.open(paymentUrl, "_blank", "noopener,noreferrer");
+//         } else {
+//           setResponseMsg("Payment token not generated.");
+//         }
+//       } else {
+//         setResponseMsg(res.data.message || "Something went wrong");
+//       }
+//     } catch (err) {
+//       console.error("Easebuzz error:", err);
+//       setResponseMsg("Something went wrong. Please try again.");
+//     } finally {
+//       setLoading(false);
+//       setShowModal(false);
+//     }
+//   };
+const handleConfirmPayment = async () => {
+  if (!validateForm()) return;
 
-        const token = res.data.token;
-        if (token) {
-          const paymentUrl = `https://pay.easebuzz.in/pay/${token}`;
-          window.open(paymentUrl, "_blank", "noopener,noreferrer");
-        } else {
-          setResponseMsg("Payment token not generated.");
-        }
-      } else {
-        setResponseMsg(res.data.message || "Something went wrong");
-      }
-    } catch (err) {
-      console.error("Easebuzz error:", err);
-      setResponseMsg("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-      setShowModal(false);
-    }
+  setLoading(true);
+  setResponseMsg("");
+
+  // Remove commas and convert to number
+  const price = selectedPlan.discout_price.replace(/,/g, "");
+
+  const dataToSend = {
+    plan_id: planId,
+    plan_name: selectedPlan.category_name,
+    plan_price: price,
+    ...formData,
   };
+// console.log(dataToSend);return false;
+  try {
+    const res = await axios.post(
+      "https://www.edtechinnovate.com/admin/app/service/payments/store.php",
+      dataToSend,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
+    if (res.data.status) {
+      setResponseMsg("Redirecting to payment...");
+
+      const token = res.data.token;
+      if (token) {
+        const paymentUrl = `https://pay.easebuzz.in/pay/${token}`;
+        window.open(paymentUrl, "_blank", "noopener,noreferrer");
+      } else {
+        setResponseMsg("Payment token not generated.");
+      }
+    } else {
+      setResponseMsg(res.data.message || "Something went wrong");
+    }
+  } catch (err) {
+    console.error("Easebuzz error:", err.response?.data || err.message);
+    setResponseMsg(err.response?.data?.message || "Something went wrong. Please try again.");
+  } finally {
+    setLoading(false);
+    setShowModal(false);
+  }
+};
+
 
   const handleFreeTrial = async (e) => {
     e.preventDefault();
@@ -274,7 +321,7 @@ export default function BuyNow() {
                     <div className="pricing-header">
                       <h3>{selectedPlan.category_name}</h3>
                       <div className="pricing-text">
-                        <h2>₹{selectedPlan.discout_price}</h2>
+                        <h2 className="fs-2">₹{selectedPlan.discout_price}</h2>
                         <div className="price">
                           <span>
                             <del>₹{selectedPlan.actual_price}</del> Off

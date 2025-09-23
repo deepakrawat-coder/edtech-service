@@ -62,8 +62,8 @@ export default function BlogDetails() {
         <div className="container">
           <div className="news-details-wrapper">
             <div className="row">
-              <div className="col-lg-12">
-                <h2 className="details-title">{blog.Name}</h2>
+              <div className="col-lg-8">
+                <h2 className="details-title fs-3">{blog.Name}</h2>
                 <div className="list-items">
                   <ul className="style-2">
                     <li>
@@ -83,6 +83,46 @@ export default function BlogDetails() {
                     />
                   </div>
                 </div>
+              </div>
+
+              <div className="col-lg-4">
+                <div className="border border-1 rounded-3 p-3">
+                <div className="section-title mb-4">
+                  <h2 className="title-anim fs-4">Our Latest Blogs</h2>
+                </div>
+
+                <div className="row">
+                  {blogs
+                    .filter((b) => b.Slug !== slug) // exclude current blog
+                    .slice(0, 3) // show 3 latest
+                    .map((b) => (
+                      <div className="col-12" key={b.ID}>
+                        <div className="news-box-items img-custom-anim-top">
+                          <Link to={`/blog/${b.Slug}`}>
+                            <div className="news-thumb">
+                              <img src={b.Photo} alt={b.Name} loading="lazy" />
+                            </div>
+                          </Link>
+                          <div className="news-content">
+                            <ul className="post-date">
+                              <li>
+                                <i className="fa-light fa-calendar-days"></i>
+                                {new Date(b.Created_At).toLocaleDateString()}
+                              </li>
+                            </ul>
+                            <h3>
+                              <Link to={`/blog/${b.Slug}`}>{b.Name}</Link>
+                            </h3>
+                            <Link to={`/blog/${b.Slug}`} className="link-btn">
+                              Continue Reading{" "}
+                              <i className="fa-sharp fa-regular fa-arrow-right"></i>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
               </div>
             </div>
           </div>
@@ -123,7 +163,9 @@ export default function BlogDetails() {
                           data-bs-parent="#accordionExample"
                         >
                           <div className="accordion-body">
-                            <p  dangerouslySetInnerHTML={{ __html: faq.answer }}></p>
+                            <p
+                              dangerouslySetInnerHTML={{ __html: faq.answer }}
+                            ></p>
                           </div>
                         </div>
                       </div>
@@ -137,7 +179,7 @@ export default function BlogDetails() {
       )}
 
       {/* Recent Posts */}
-      <div className="container mb-5">
+      {/* <div className="container mb-5">
         <div className="section-title text-center mb-40">
           <h2 className="title-anim">Our Latest Blogs</h2>
         </div>
@@ -173,7 +215,7 @@ export default function BlogDetails() {
               </div>
             ))}
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
