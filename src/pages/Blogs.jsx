@@ -89,7 +89,7 @@ export default function Blogs() {
                     </h3>
                     <Link to={`/blog/${blog.Slug}`} className="link-btn">
                       Continue Reading
-                      <i class="fa-solid fa-arrow-right"></i>
+                      <i className="fa-solid fa-arrow-right"></i>
                     </Link>
                   </div>
                 </div>

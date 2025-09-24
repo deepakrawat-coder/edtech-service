@@ -36,16 +36,16 @@ export default function Faq({faqs}) {
     return (
         <section className="faq-section fix">
             <div className="faq-shape">
-                <img src="/assets/img/faq-shape.png" alt="img" loading='lazy' />
+                <img src="/assets/img/faq-shape.png" alt="img" loading='lazy' fetchPriority="low" />
             </div>
             <div className="faq-shape-2">
-                <img src="/assets/img/faq-shape-2.png" alt="img" loading='lazy' />
+                <img src="/assets/img/faq-shape-2.png" alt="img" loading='lazy'  fetchPriority="low"  />
             </div>
             <div className="container">
                 <div className="section-title text-center mb-70">
                     <div className="sub-text justify-content-center wow fadeInUp">
-                        <img src="/assets/img/star.png" alt="img" loading='lazy' />
-                        <p className="h6 mb-0">FAQS</p> <img src="/assets/img/star.png" alt="img" loading='lazy' />
+                        <img src="/assets/img/star.png" alt="img" loading='lazy' fetchPriority="low" />
+                        <p className="h6 mb-0">FAQS</p> <img src="/assets/img/star.png" alt="img" loading='lazy' fetchPriority="low" />
                     </div>
                     <h2 className="title-anim">Get Your Have a Questions?</h2>
                     <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">

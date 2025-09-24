@@ -18,7 +18,7 @@ export default function Footer() {
               <StartTrial/>
               <Link to="#" className="theme-btn style-2">
                 Get a demo{" "}
-                <i class="fa-solid fa-arrow-right"></i>
+                <i className="fa-solid fa-arrow-right"></i>
               </Link>
             </div>
           </div>
@@ -31,6 +31,7 @@ export default function Footer() {
                   <div className="widget-head">
                     <Link to="/">
                       <img
+                      fetchPriority="low"
                         src="/assets/img/logo/logo.png"
                         alt="img"
                         loading="lazy"

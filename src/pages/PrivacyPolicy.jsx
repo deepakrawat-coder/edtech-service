@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <i class="fa-solid fa-arrow-right"></i>
+                                    <i className="fa-solid fa-arrow-right"></i>
                                 </li>
                                 <li>
                                     Privacy Policy
@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
                             </ul>
                             <div className="breadcrumb-text-items">
                                 <div id="scrollDown" className="icon wow fadeInUp" data-wow-delay=".3s">
-                                    <i class="fa-solid fa-arrow-down"></i>
+                                    <i className="fa-solid fa-arrow-down"></i>
                                 </div>
                                 <p className="wow fadeInUp" data-wow-delay=".5s">
                                     CRM management is comprehensive contact management, allowing businesses.

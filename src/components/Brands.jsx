@@ -22,6 +22,7 @@ export default function Brands({clients}) {
                         src={client.logo}
                         alt={client.name || `brand-${j + 1}`}
                         loading="lazy"
+                        fetchPriority="low"
                       />
                     </div>
                   ))

@@ -36,7 +36,7 @@ export default function BlogDetails() {
                   <Link to="/"> Home </Link>
                 </li>
                 <li>
-                  <i class="fa-solid fa-arrow-right"></i>
+                  <i className="fa-solid fa-arrow-right"></i>
                 </li>
                 <li>{blog.Name}</li>
               </ul>
@@ -46,7 +46,7 @@ export default function BlogDetails() {
                   className="icon wow fadeInUp"
                   data-wow-delay=".3s"
                 >
-<i class="fa-solid fa-arrow-down"></i>
+<i className="fa-solid fa-arrow-down"></i>
                 </div>
                 <p className="wow fadeInUp" data-wow-delay=".5s">
                   {blog.Meta_Description}

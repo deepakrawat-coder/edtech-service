@@ -5,7 +5,7 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { DataProvider } from "./context/DataContext.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
-
+// import "./styles/custom-bootstrap.scss";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>

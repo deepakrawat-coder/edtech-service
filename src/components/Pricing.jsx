@@ -10,9 +10,9 @@ export default function Pricing({ pricing = [] }) {
       <div className="container">
         <div className="section-title text-center mb-80">
           <div className="sub-text justify-content-center wow fadeInUp">
-            <img src="/assets/img/star.png" alt="img" loading="lazy" />
+            <img src="/assets/img/star.png" alt="img" loading="lazy" fetchPriority="low" />
             <p className="h6 mb-0">PRICING PLAN</p>
-            <img src="/assets/img/star.png" alt="img" loading="lazy" />
+            <img src="/assets/img/star.png" alt="img" loading="lazy" fetchPriority="low" />
           </div>
           <h2 className="title-anim">Starter Plan For Everyone</h2>
           <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
@@ -51,7 +51,7 @@ export default function Pricing({ pricing = [] }) {
                       >
                         {plan.tag && (
                           <div className="tag">
-                            <img src={plan.tag} alt="tag" loading="lazy" />
+                            <img src={plan.tag} alt="tag" loading="lazy" fetchPriority="low" />
                           </div>
                         )}
                         <div className="pricing-header">
@@ -60,6 +60,7 @@ export default function Pricing({ pricing = [] }) {
                               src="/assets/img/pricing-shape.png"
                               alt="shape"
                               loading="lazy"
+                              fetchPriority="low"
                             />
                           </div>
                           <h3>{plan.category_name}</h3>
@@ -90,7 +91,7 @@ export default function Pricing({ pricing = [] }) {
                           
                           <Link to={`/pay/${plan.plain_id}`} className="theme-btn">
                             Pick your plan{" "}
-                           <i class="fa-solid fa-arrow-right"></i>
+                           <i className="fa-solid fa-arrow-right"></i>
                           </Link>
                         </div>
                       </div>

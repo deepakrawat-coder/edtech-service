@@ -1,5 +1,5 @@
 // src/context/DataContext.jsx
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useMemo } from "react";
 import axios from "axios";
 
 const DataContext = createContext();
@@ -18,7 +18,7 @@ export const DataProvider = ({ children }) => {
   const [keyFeatures, setKeyFeatures] = useState([]);
   const [about, setAbout] = useState([]);
 
-  // Fetch critical data first (for LCP)
+  // Fetch critical data
   useEffect(() => {
     const fetchCriticalData = async () => {
       try {
@@ -39,7 +39,7 @@ export const DataProvider = ({ children }) => {
     fetchCriticalData();
   }, []);
 
-  // Fetch non-critical data after critical data / on idle
+  // Fetch non-critical data
   useEffect(() => {
     const fetchNonCriticalData = async () => {
       try {
@@ -69,20 +69,24 @@ export const DataProvider = ({ children }) => {
     }
   }, []);
 
+  // ✅ Memoize value to avoid re-renders
+  const contextValue = useMemo(
+    () => ({
+      clients,
+      banner,
+      testimonials,
+      plains,
+      faqs,
+      blogs,
+      services,
+      keyFeatures,
+      about,
+    }),
+    [clients, banner, testimonials, plains, faqs, blogs, services, keyFeatures, about]
+  );
+
   return (
-    <DataContext.Provider
-      value={{
-        clients,
-        banner,
-        testimonials,
-        plains,
-        faqs,
-        blogs,
-        services,
-        keyFeatures,
-        about,
-      }}
-    >
+    <DataContext.Provider value={contextValue}>
       {children}
     </DataContext.Provider>
   );

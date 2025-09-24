@@ -10,9 +10,9 @@ export default function AboutUsSection({ about }) {
         <div className="container">
           <div className="section-title text-center mb-5">
             <div className="sub-text justify-content-center wow fadeInUp">
-              <img src="/assets/img/star.png" alt="img" loading="lazy" />
+              <img src="/assets/img/star.png" alt="img" loading="lazy" fetchPriority="low" />
               <p className="h6 mb-0"> {about?.[0]?.title} </p>{" "}
-              <img src="/assets/img/star.png" alt="img" loading="lazy" />
+              <img src="/assets/img/star.png" alt="img" loading="lazy" fetchPriority="low" />
             </div>
             <h2 className="title-anim h2"> {about?.[0]?.title}</h2>
             {/* <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
@@ -37,6 +37,7 @@ export default function AboutUsSection({ about }) {
             <div className="col-12 col-md-6">
               <div className="about-us-img">
                 <img
+                fetchPriority="low"
                   src={about?.[0]?.image}
                   alt="img"
                   className="img-fluid rounded-3 w-100"
