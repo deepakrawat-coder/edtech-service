@@ -1,23 +1,27 @@
+// import { defineConfig } from 'vite';
+// import react from '@vitejs/plugin-react';
+
+// export default defineConfig({
+//   plugins: [react()],
+//   build: {
+//     target: 'esnext', // optional: modern browsers
+//   },
+// });
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/",
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "./src/styles/variables.scss";`,
-      },
-    },
-  },
   build: {
-    target: "esnext",
+    target: "es2020",
     minify: "esbuild",
+    sourcemap: true,
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes("node_modules")) return "vendor"; // merge all libraries into vendor
+        manualChunks: {
+          vendor: ["react", "react-dom"],
         },
       },
     },

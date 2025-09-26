@@ -23,6 +23,8 @@ export default function Brands({clients}) {
                         alt={client.name || `brand-${j + 1}`}
                         loading="lazy"
                         fetchPriority="low"
+                        width="208"
+                        height="75"
                       />
                     </div>
                   ))

@@ -86,6 +86,8 @@ export default function Testimonials({ keyFeatures }) {
                         alt={t.title}
                         loading="lazy"
                         fetchPriority="low"
+                        width="600"
+                        height="450"
                       />
                     </div>
                   </div>

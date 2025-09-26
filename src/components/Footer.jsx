@@ -122,15 +122,15 @@ export default function Footer() {
               <div className="icon">
                 <i className="fa-sharp fa-solid fa-phone-volume"></i>
               </div>
-              <h5>
+              <p className="h6 mb-0">
                 <Link to="tel:+91 8851920153"> +91 8851920153 </Link>
-              </h5>
+              </p>
             </div>
             <div className="icon-items">
               <div className="icon">
                 <i className="fa-solid fa-envelope"></i>
               </div>
-              <h5>
+              <p className="h6 mb-0">
                 {" "}
                 <Link
                   to="mailto:info@edtechinnovate.com"
@@ -139,18 +139,18 @@ export default function Footer() {
                 >
                   info@edtechinnovate.com
                 </Link>
-              </h5>
+              </p>
             </div>
             <div className="icon-items">
               <div className="icon">
                 <i className="fa-sharp fa-solid fa-location-dot"></i>
               </div>
-              <h5>
+              <p className="h6 mb-0">
                 <Link to="#">
                   {" "}
                   A-18, S1, Second Floor, Sector 59, Noida UP 201301{" "}
                 </Link>
-              </h5>
+              </p>
             </div>
           </div>
           <div className="footer-bottom">

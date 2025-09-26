@@ -49,7 +49,8 @@ export default function BlogSection({ blogData }) {
               <div className="news-box-items img-custom-anim-top">
                 <Link to={`/blog/${blog.Slug}`}>
                   <div className="news-thumb">
-                    <img src={blog.Photo} alt={blog.Name} loading="lazy" fetchPriority="low" />
+                    
+                    <img src={blog.Photo} alt={blog.Name} loading="lazy" fetchPriority="low" width='375' height='250' />
                   </div>
                 </Link>
                 <div className="news-content">

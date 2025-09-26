@@ -2,40 +2,91 @@
 import { Link } from "react-router-dom";
 
 export default function Header() {
-    return (
-        <>
-            <header className="header sticky-top">
-                <nav className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
-                    <div className="container">
-                        <Link className="navbar-brand" to="/">
-                            <img src="/assets/img/logo/logo.png" width="150" alt="edtech logo" className="img-fluid rounded-3" loading="lazy" fetchPriority="high" />
-                        </Link>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                                <li className="nav-item">
-                                    {/* <Link className="nav-link active" aria-current="page" to="#"> About Us </Link> */}
-                                    <a className="nav-link active" aria-current="page" href="#about-us"> About Us </a>
-                                </li>
-                                 <li className="nav-item">
-                                    {/* <Link className="nav-link" to="#"> Services </Link> */}
-                                     <a className="nav-link" href="#service">Services</a>
-                                </li>
-                                <li className="nav-item">
-                                    {/* <Link className="nav-link" to="#pricing"> Pricing </Link> */}
-                                    <a className="nav-link" href="#pricing">Pricing</a>
-                                </li>                               
-                                <li className="nav-item">
-                                    {/* <Link className="nav-link" to="#"> Contact Us </Link> */}
-                                     <a className="nav-link" href="#footer">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-        </>
-    );
+  return (
+    <>
+      <header className="header sticky-top">
+        <nav className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
+          <div className="container">
+            <Link className="navbar-brand" to="/">
+              {/* <img
+                src="/assets/img/logo/logo.png"
+                width="150"
+                alt="edtech logo"
+                className="img-fluid rounded-3"
+                loading="lazy"
+                fetchPriority="high"
+              /> */}
+              <picture>
+                {/* WebP sources for modern browsers */}
+                <source
+                  srcSet="/assets/img/logo/logo.webp 480w, /assets/img/logo/logo.webp 768w, /assets/img/logo/logo.webp 1270w"
+                  type="image/webp"
+                  sizes="(max-width: 480px) 50px, (max-width: 768px) 60px, 120px"
+                />
+
+                {/* Fallback for older browsers */}
+                <img
+                  src="/assets/img/logo/logo.png"
+                  alt="Hero Banner"
+                  className="img-fluid rounded-3"
+                  width="120"
+                  height="60"
+                  fetchPriority="high" // Tells browser this is LCP-critical
+                  loading="eager" // Avoid lazy-loading for LCP
+                  style={{ objectFit: "cover" }}
+                />
+              </picture>
+            </Link>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  {/* <Link className="nav-link active" aria-current="page" to="#"> About Us </Link> */}
+                  <a
+                    className="nav-link active"
+                    aria-current="page"
+                    href="#about-us"
+                  >
+                    {" "}
+                    About Us{" "}
+                  </a>
+                </li>
+                <li className="nav-item">
+                  {/* <Link className="nav-link" to="#"> Services </Link> */}
+                  <a className="nav-link" href="#service">
+                    Services
+                  </a>
+                </li>
+                <li className="nav-item">
+                  {/* <Link className="nav-link" to="#pricing"> Pricing </Link> */}
+                  <a className="nav-link" href="#pricing">
+                    Pricing
+                  </a>
+                </li>
+                <li className="nav-item">
+                  {/* <Link className="nav-link" to="#"> Contact Us </Link> */}
+                  <a className="nav-link" href="#footer">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </>
+  );
 }

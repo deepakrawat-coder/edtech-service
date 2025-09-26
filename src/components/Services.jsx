@@ -103,7 +103,7 @@ export default function Services({services}) {
 
                                 {/* Icon */}
                                 <div className="icon">
-                                    <img src={service.image} alt={service.title} width="100" loading='lazy'  fetchPriority="low" />
+                                    <img src={service.image} alt={service.title} width="100" height="100" className='seervice_img' loading='lazy'  fetchPriority="low" />
                                 </div>
 
                                 {/* Content */}
