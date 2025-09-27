@@ -8771,3 +8771,64 @@ a {
     display: none;
   }
 }
+ .bg-white{
+      background-color:white !important;
+     }
+     a { text-decoration: none !important; }
+    body { margin: 0; font-family: Arial, sans-serif; }
+    header { display: flex; justify-content: space-between; align-items: center; }
+    .navbar-expand-lg { width: 100% !important; }
+
+    @media(min-width: 991px) {
+      .about-us-img { width: 636px; height: 444px; }
+    }    
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      src: url("/assets/fa-solid-900.woff2") format("woff2"),
+           url("/assets/fa-solid-900.woff") format("woff");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap !important;
+    }
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      src: url("/assets/fa-regular-400.woff2") format("woff2"),
+           url("/assets/fa-regular-400.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap !important;
+    }
+    @font-face {
+      font-family: "Font Awesome 6 Brands";
+      src: url("/assets/fa-brands-400.woff2") format("woff2"),
+           url("/assets/fa-brands-400.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap !important;
+    }
+    .dashboard-image {
+    width: 100% !important;
+    height: auto !important;
+    overflow: hidden !important;
+}
+
+.dashboard-image img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+   @media(min-width:1260px){
+       .dashboard-image {
+    width: 1270px !important;
+    height: 700px !important;
+    overflow: hidden !important; /* prevents overflow shifts */
+}
+
+.dashboard-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* ensures image scales without distortion */
+    display: block !important;    /* removes inline spacing */
+}
+   }

@@ -123,7 +123,7 @@ export default function Footer() {
                 <i className="fa-sharp fa-solid fa-phone-volume"></i>
               </div>
               <p className="h6 mb-0">
-                <Link to="tel:+91 8851920153"> +91 8851920153 </Link>
+                <Link to="tel:+91 8851920153" className="text-black">+91 8851920153 </Link>
               </p>
             </div>
             <div className="icon-items">
@@ -136,6 +136,7 @@ export default function Footer() {
                   to="mailto:info@edtechinnovate.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-black"
                 >
                   info@edtechinnovate.com
                 </Link>
@@ -146,7 +147,7 @@ export default function Footer() {
                 <i className="fa-sharp fa-solid fa-location-dot"></i>
               </div>
               <p className="h6 mb-0">
-                <Link to="#">
+                <Link to="#" className="text-black" >
                   {" "}
                   A-18, S1, Second Floor, Sector 59, Noida UP 201301{" "}
                 </Link>

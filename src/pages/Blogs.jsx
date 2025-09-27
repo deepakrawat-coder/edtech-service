@@ -73,15 +73,15 @@ export default function Blogs() {
                   </Link>
                   <div className="news-content">
                     <ul className="post-date">
-                      <li>
-                        <Link to={`/blog/${blog.Slug}`}>
+                      <li >
+                        <Link to={`/blog/${blog.Slug}`} className="text-black">
                            <i className="fa-solid fa-calendar-days"></i>
                           {blog.Created_At}
                         </Link>
                       </li>
                     </ul>
                     <h3>
-                      <Link to={`/blog/${blog.Slug}`}>
+                      <Link to={`/blog/${blog.Slug}`}className="text-black">
                         {blog?.Name && blog.Name.length > 35
                           ? blog.Name.slice(0, 35) + "..."
                           : blog?.Name}

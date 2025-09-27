@@ -49,20 +49,20 @@ export default function Hero({ banner }) {
         </div>
 
         <div className="dashboard-section section-padding pb-0 custom_none">
-          <div className="dashboard-image">
-            <picture>
+          <div className="dashboard-image rounded-3" width="1270"  height="700">
+            <img src={hero.image} alt="Hero Banner" fetchPriority="high" loading="eager" width="1270"  height="700" />
+            {/* <picture>
               <source srcSet={hero.image} type="image/avif" />
               <source srcSet={hero.image} type="image/webp" />
               <img
                 src={hero.image}
                 alt="Hero Banner"
                 className="img-fluid rounded-3"
-                loading="eager"
-                fetchpriority="high"
+                loading="lazy"
                 width="1270"
                 height="700"
               />
-            </picture>
+            </picture> */}
           </div>
         </div>
       </section>

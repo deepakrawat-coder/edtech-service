@@ -3,39 +3,37 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <>
+    <>     
       <header className="header sticky-top">
         <nav className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
           <div className="container">
             <Link className="navbar-brand" to="/">
-              {/* <img
+              <img
                 src="/assets/img/logo/logo.png"
                 width="150"
+                height="150"
                 alt="edtech logo"
-                className="img-fluid rounded-3"
-                loading="lazy"
-                fetchPriority="high"
-              /> */}
-              <picture>
-                {/* WebP sources for modern browsers */}
+                class="img-fluid rounded-3"
+                loading="eager"
+                fetchpriority="high"
+              />
+              {/* <picture>
                 <source
                   srcSet="/assets/img/logo/logo.webp 480w, /assets/img/logo/logo.webp 768w, /assets/img/logo/logo.webp 1270w"
                   type="image/webp"
                   sizes="(max-width: 480px) 50px, (max-width: 768px) 60px, 120px"
                 />
-
-                {/* Fallback for older browsers */}
                 <img
                   src="/assets/img/logo/logo.png"
                   alt="Hero Banner"
                   className="img-fluid rounded-3"
                   width="120"
                   height="60"
-                  fetchPriority="high" // Tells browser this is LCP-critical
-                  loading="eager" // Avoid lazy-loading for LCP
+                  fetchPriority="high"
+                  loading="eager"
                   style={{ objectFit: "cover" }}
                 />
-              </picture>
+              </picture> */}
             </Link>
             <button
               className="navbar-toggler"

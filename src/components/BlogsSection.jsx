@@ -31,9 +31,19 @@ export default function BlogSection({ blogData }) {
       <div className="container">
         <div className="section-title text-center mb-40">
           <div className="sub-text justify-content-center wow fadeInUp">
-            <img src="/assets/img/star.png" alt="img" loading="lazy" fetchPriority="low" />
+            <img
+              src="/assets/img/star.png"
+              alt="img"
+              loading="lazy"
+              fetchPriority="low"
+            />
             <p className="h6 mb-0 ">Blog & Article</p>{" "}
-            <img src="/assets/img/star.png" alt="img" loading="lazy" fetchPriority="low" />
+            <img
+              src="/assets/img/star.png"
+              alt="img"
+              loading="lazy"
+              fetchPriority="low"
+            />
           </div>
           <h2 className="title-anim">Our latest Blogs</h2>
           {/* <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
@@ -44,28 +54,39 @@ export default function BlogSection({ blogData }) {
         </div>
 
         <div className="row">
-          {blogData.map((blog) => (
-            <div key={blog.id ? blog.id : blog.Name}  className="col-xl-4 col-lg-6 col-md-6 d-flex align-items-stretch" >
+          {blogData.slice(0,3).map((blog) => (
+            <div
+              key={blog.id ? blog.id : blog.Name}
+              className="col-xl-4 col-lg-6 col-md-6 d-flex align-items-stretch"
+            >
               <div className="news-box-items img-custom-anim-top">
                 <Link to={`/blog/${blog.Slug}`}>
                   <div className="news-thumb">
-                    
-                    <img src={blog.Photo} alt={blog.Name} loading="lazy" fetchPriority="low" width='375' height='250' />
+                    <img
+                      src={blog.Photo}
+                      alt={blog.Name}
+                      loading="lazy"
+                      fetchPriority="low"
+                      width="375"
+                      height="250"
+                    />
                   </div>
                 </Link>
                 <div className="news-content">
                   <ul className="post-date">
                     <li>
-                      <Link to={`/blog/${blog.Slug}`}>
+                      <Link to={`/blog/${blog.Slug}`} className="text-black">
                         <i className="fa-solid fa-calendar-days"></i>
                         {blog.Created_At}
                       </Link>
                     </li>
                   </ul>
                   <h3>
-                    <Link to={`/blog/${blog.Slug}`}>{blog?.Name && blog.Name.length > 35 
-  ? blog.Name.slice(0, 35) + '...' 
-  : blog?.Name}</Link>
+                    <Link to={`/blog/${blog.Slug}`} className="text-black">
+                      {blog?.Name && blog.Name.length > 35
+                        ? blog.Name.slice(0, 35) + "..."
+                        : blog?.Name}
+                    </Link>
                   </h3>
                   <Link to={`/blog/${blog.Slug}`} className="link-btn">
                     Continue Reading

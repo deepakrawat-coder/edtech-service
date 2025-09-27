@@ -46,7 +46,7 @@ export default function BlogDetails() {
                   className="icon wow fadeInUp"
                   data-wow-delay=".3s"
                 >
-<i className="fa-solid fa-arrow-down"></i>
+                  <i className="fa-solid fa-arrow-down"></i>
                 </div>
                 <p className="wow fadeInUp" data-wow-delay=".5s">
                   {blog.Meta_Description}
@@ -87,42 +87,46 @@ export default function BlogDetails() {
 
               <div className="col-lg-4">
                 <div className="border border-1 rounded-3 p-3">
-                <div className="section-title mb-4">
-                  <h2 className="title-anim fs-4">Our Latest Blogs</h2>
-                </div>
+                  <div className="section-title mb-4">
+                    <h2 className="title-anim fs-4">Our Latest Blogs</h2>
+                  </div>
 
-                <div className="row">
-                  {blogs
-                    .filter((b) => b.Slug !== slug) // exclude current blog
-                    .slice(0, 3) // show 3 latest
-                    .map((b) => (
-                      <div className="col-12" key={b.ID}>
-                        <div className="news-box-items img-custom-anim-top">
-                          <Link to={`/blog/${b.Slug}`}>
-                            <div className="news-thumb">
-                              <img src={b.Photo} alt={b.Name} loading="lazy" />
-                            </div>
-                          </Link>
-                          <div className="news-content">
-                            <ul className="post-date">
-                              <li>
-                                <i className="fa-light fa-calendar-days"></i>
-                                {new Date(b.Created_At).toLocaleDateString()}
-                              </li>
-                            </ul>
-                            <h3>
-                              <Link to={`/blog/${b.Slug}`}>{b.Name}</Link>
-                            </h3>
-                            <Link to={`/blog/${b.Slug}`} className="link-btn">
-                              Continue Reading{" "}
-                              <i className="fa-sharp fa-regular fa-arrow-right"></i>
+                  <div className="row">
+                    {blogs
+                      .filter((b) => b.Slug !== slug) // exclude current blog
+                      .slice(0, 4) // show 3 latest
+                      .map((b) => (
+                        <div className="col-12" key={b.ID}>
+                          <div className="news-box-items img-custom-anim-top">
+                            <Link to={`/blog/${b.Slug}`}>
+                              <div className="news-thumb">
+                                <img
+                                  src={b.Photo}
+                                  alt={b.Name}
+                                  loading="lazy"
+                                />
+                              </div>
                             </Link>
+                            <div className="news-content">
+                              <ul className="post-date">
+                                <li>
+                                  <i className="fa-solid fa-calendar-days"></i>
+                                  {new Date(b.Created_At).toLocaleDateString()}
+                                </li>
+                              </ul>
+                              <h3>
+                                <Link to={`/blog/${b.Slug}`} className="text-black">{b.Name}</Link>
+                              </h3>
+                              <Link to={`/blog/${b.Slug}`} className="link-btn">
+                                Continue Reading{" "}
+                                 <i className="fa-solid fa-arrow-right"></i>
+                              </Link>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>
